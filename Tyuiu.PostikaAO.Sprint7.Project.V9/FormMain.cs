@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+using Tyuiu.PostikaAO.Sprint7.Project.V9.Lib;
 namespace Tyuiu.PostikaAO.Sprint7.Project.V9
 {
     public partial class FormMain : Form
@@ -16,10 +17,30 @@ namespace Tyuiu.PostikaAO.Sprint7.Project.V9
         {
             InitializeComponent();
         }
-
+        DataService ds = new DataService();
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void buttonAdd_PAO_Click(object sender, EventArgs e)
+        {
+            ds.AddNewPosition();
+        }
+
+        private void buttonDelete_PAO_Click(object sender, EventArgs e)
+        {
+            string[] data = ds.OpenFile();
+
+            labelName_PAO.Text = data[0];
+            labelYearText_PAO.Text = data[1];
+            labelGenreText_PAO.Text = data[2];
+            labelDirectorText_PAO.Text = data[3];
+            labelScreenwriterText_PAO.Text = data[4];
+            labelRoleText_PAO.Text = data[5];
+            labelCountryText_PAO.Text = data[6];
+            labelStudioText_PAO.Text = data[7];
+            labelDescriptionText_PAO.Text = data[8];
         }
     }
 }
