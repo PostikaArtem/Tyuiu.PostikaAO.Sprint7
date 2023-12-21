@@ -25,12 +25,13 @@ namespace Tyuiu.PostikaAO.Sprint7.Project.V9
 
         private void buttonAdd_PAO_Click(object sender, EventArgs e)
         {
-            ds.AddNewPosition();
+            FormAddFilm AddForm = new FormAddFilm();
+            AddForm.ShowDialog();
         }
 
         private void buttonDelete_PAO_Click(object sender, EventArgs e)
         {
-            string[] data = ds.OpenFile();
+            string[] data = ds.OpenFilm(0);
 
             labelName_PAO.Text = data[0];
             labelYearText_PAO.Text = data[1];
