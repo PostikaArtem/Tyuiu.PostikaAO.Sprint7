@@ -47,9 +47,12 @@ namespace Tyuiu.PostikaAO.Sprint7.Project.V9
         string pathImage = "";
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            openFileDialog1.ShowDialog();
-            pathImage = openFileDialog1.FileName;
-            pictureBoxPreview_PAO.Image = Image.FromFile(pathImage);
+           if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                pathImage = openFileDialog1.FileName;
+                pictureBoxPreview_PAO.Image = Image.FromFile(pathImage);
+            }
+           
         }
 
     }

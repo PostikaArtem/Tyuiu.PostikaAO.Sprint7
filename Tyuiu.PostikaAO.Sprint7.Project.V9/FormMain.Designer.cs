@@ -40,29 +40,26 @@ namespace Tyuiu.PostikaAO.Sprint7.Project.V9
             this.flowLayoutPanelLeft_PAO = new System.Windows.Forms.FlowLayoutPanel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBoxInformation_PAO = new System.Windows.Forms.GroupBox();
+            this.labelDescription_PAO = new System.Windows.Forms.Label();
+            this.labelRole_PAO = new System.Windows.Forms.Label();
             this.labelName_PAO = new System.Windows.Forms.Label();
+            this.labelCountry_PAO = new System.Windows.Forms.Label();
+            this.labelStudio_PAO = new System.Windows.Forms.Label();
+            this.labelDescriptionText_PAO = new System.Windows.Forms.Label();
+            this.labelStudioText_PAO = new System.Windows.Forms.Label();
+            this.labelCountryText_PAO = new System.Windows.Forms.Label();
+            this.labelRoleText_PAO = new System.Windows.Forms.Label();
+            this.labelScreenwriterText_PAO = new System.Windows.Forms.Label();
+            this.labelDirectorText_PAO = new System.Windows.Forms.Label();
+            this.labelGenreText_PAO = new System.Windows.Forms.Label();
+            this.labelYearText_PAO = new System.Windows.Forms.Label();
             this.labelYear_PAO = new System.Windows.Forms.Label();
             this.labelGenre_PAO = new System.Windows.Forms.Label();
             this.labelDirector_PAO = new System.Windows.Forms.Label();
             this.labelScreenwriter_PAO = new System.Windows.Forms.Label();
-            this.labelRole_PAO = new System.Windows.Forms.Label();
-            this.labelCountry_PAO = new System.Windows.Forms.Label();
-            this.labelStudio_PAO = new System.Windows.Forms.Label();
-            this.labelDescription_PAO = new System.Windows.Forms.Label();
-            this.labelYearText_PAO = new System.Windows.Forms.Label();
-            this.labelGenreText_PAO = new System.Windows.Forms.Label();
-            this.labelDirectorText_PAO = new System.Windows.Forms.Label();
-            this.labelScreenwriterText_PAO = new System.Windows.Forms.Label();
-            this.labelRoleText_PAO = new System.Windows.Forms.Label();
-            this.labelCountryText_PAO = new System.Windows.Forms.Label();
-            this.labelStudioText_PAO = new System.Windows.Forms.Label();
-            this.labelDescriptionText_PAO = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             this.panelTop_PAO.SuspendLayout();
             this.groupBoxActions_PAO.SuspendLayout();
             this.groupBoxSearch_PAO.SuspendLayout();
-            this.flowLayoutPanelLeft_PAO.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBoxInformation_PAO.SuspendLayout();
             this.SuspendLayout();
@@ -151,8 +148,6 @@ namespace Tyuiu.PostikaAO.Sprint7.Project.V9
             // flowLayoutPanelLeft_PAO
             // 
             this.flowLayoutPanelLeft_PAO.BackColor = System.Drawing.SystemColors.ButtonShadow;
-            this.flowLayoutPanelLeft_PAO.Controls.Add(this.button1);
-            this.flowLayoutPanelLeft_PAO.Controls.Add(this.button2);
             this.flowLayoutPanelLeft_PAO.Dock = System.Windows.Forms.DockStyle.Left;
             this.flowLayoutPanelLeft_PAO.Location = new System.Drawing.Point(0, 66);
             this.flowLayoutPanelLeft_PAO.Name = "flowLayoutPanelLeft_PAO";
@@ -197,6 +192,24 @@ namespace Tyuiu.PostikaAO.Sprint7.Project.V9
             this.groupBoxInformation_PAO.TabStop = false;
             this.groupBoxInformation_PAO.Text = "Информация";
             // 
+            // labelDescription_PAO
+            // 
+            this.labelDescription_PAO.AutoSize = true;
+            this.labelDescription_PAO.Location = new System.Drawing.Point(316, 354);
+            this.labelDescription_PAO.Name = "labelDescription_PAO";
+            this.labelDescription_PAO.Size = new System.Drawing.Size(78, 17);
+            this.labelDescription_PAO.TabIndex = 13;
+            this.labelDescription_PAO.Text = "Описание:";
+            // 
+            // labelRole_PAO
+            // 
+            this.labelRole_PAO.AutoSize = true;
+            this.labelRole_PAO.Location = new System.Drawing.Point(316, 235);
+            this.labelRole_PAO.Name = "labelRole_PAO";
+            this.labelRole_PAO.Size = new System.Drawing.Size(63, 17);
+            this.labelRole_PAO.TabIndex = 10;
+            this.labelRole_PAO.Text = "В ролях:";
+            // 
             // labelName_PAO
             // 
             this.labelName_PAO.AutoSize = true;
@@ -206,6 +219,96 @@ namespace Tyuiu.PostikaAO.Sprint7.Project.V9
             this.labelName_PAO.Size = new System.Drawing.Size(99, 25);
             this.labelName_PAO.TabIndex = 5;
             this.labelName_PAO.Text = "Название";
+            // 
+            // labelCountry_PAO
+            // 
+            this.labelCountry_PAO.AutoSize = true;
+            this.labelCountry_PAO.Location = new System.Drawing.Point(319, 272);
+            this.labelCountry_PAO.Name = "labelCountry_PAO";
+            this.labelCountry_PAO.Size = new System.Drawing.Size(60, 17);
+            this.labelCountry_PAO.TabIndex = 11;
+            this.labelCountry_PAO.Text = "Страна:";
+            // 
+            // labelStudio_PAO
+            // 
+            this.labelStudio_PAO.AutoSize = true;
+            this.labelStudio_PAO.Location = new System.Drawing.Point(320, 316);
+            this.labelStudio_PAO.Name = "labelStudio_PAO";
+            this.labelStudio_PAO.Size = new System.Drawing.Size(59, 17);
+            this.labelStudio_PAO.TabIndex = 12;
+            this.labelStudio_PAO.Text = "Студия:";
+            // 
+            // labelDescriptionText_PAO
+            // 
+            this.labelDescriptionText_PAO.AutoSize = true;
+            this.labelDescriptionText_PAO.Location = new System.Drawing.Point(419, 354);
+            this.labelDescriptionText_PAO.Name = "labelDescriptionText_PAO";
+            this.labelDescriptionText_PAO.Size = new System.Drawing.Size(46, 17);
+            this.labelDescriptionText_PAO.TabIndex = 17;
+            this.labelDescriptionText_PAO.Text = "label8";
+            // 
+            // labelStudioText_PAO
+            // 
+            this.labelStudioText_PAO.AutoSize = true;
+            this.labelStudioText_PAO.Location = new System.Drawing.Point(396, 316);
+            this.labelStudioText_PAO.Name = "labelStudioText_PAO";
+            this.labelStudioText_PAO.Size = new System.Drawing.Size(46, 17);
+            this.labelStudioText_PAO.TabIndex = 16;
+            this.labelStudioText_PAO.Text = "label7";
+            // 
+            // labelCountryText_PAO
+            // 
+            this.labelCountryText_PAO.AutoSize = true;
+            this.labelCountryText_PAO.Location = new System.Drawing.Point(396, 272);
+            this.labelCountryText_PAO.Name = "labelCountryText_PAO";
+            this.labelCountryText_PAO.Size = new System.Drawing.Size(46, 17);
+            this.labelCountryText_PAO.TabIndex = 15;
+            this.labelCountryText_PAO.Text = "label6";
+            // 
+            // labelRoleText_PAO
+            // 
+            this.labelRoleText_PAO.AutoSize = true;
+            this.labelRoleText_PAO.Location = new System.Drawing.Point(408, 235);
+            this.labelRoleText_PAO.Name = "labelRoleText_PAO";
+            this.labelRoleText_PAO.Size = new System.Drawing.Size(46, 17);
+            this.labelRoleText_PAO.TabIndex = 14;
+            this.labelRoleText_PAO.Text = "label5";
+            // 
+            // labelScreenwriterText_PAO
+            // 
+            this.labelScreenwriterText_PAO.AutoSize = true;
+            this.labelScreenwriterText_PAO.Location = new System.Drawing.Point(419, 199);
+            this.labelScreenwriterText_PAO.Name = "labelScreenwriterText_PAO";
+            this.labelScreenwriterText_PAO.Size = new System.Drawing.Size(46, 17);
+            this.labelScreenwriterText_PAO.TabIndex = 13;
+            this.labelScreenwriterText_PAO.Text = "label4";
+            // 
+            // labelDirectorText_PAO
+            // 
+            this.labelDirectorText_PAO.AutoSize = true;
+            this.labelDirectorText_PAO.Location = new System.Drawing.Point(408, 146);
+            this.labelDirectorText_PAO.Name = "labelDirectorText_PAO";
+            this.labelDirectorText_PAO.Size = new System.Drawing.Size(46, 17);
+            this.labelDirectorText_PAO.TabIndex = 12;
+            this.labelDirectorText_PAO.Text = "label3";
+            // 
+            // labelGenreText_PAO
+            // 
+            this.labelGenreText_PAO.AutoSize = true;
+            this.labelGenreText_PAO.Location = new System.Drawing.Point(366, 111);
+            this.labelGenreText_PAO.Name = "labelGenreText_PAO";
+            this.labelGenreText_PAO.Size = new System.Drawing.Size(46, 17);
+            this.labelGenreText_PAO.TabIndex = 11;
+            this.labelGenreText_PAO.Text = "label2";
+            // 
+            // labelYearText_PAO
+            // 
+            this.labelYearText_PAO.AutoSize = true;
+            this.labelYearText_PAO.Location = new System.Drawing.Point(365, 75);
+            this.labelYearText_PAO.Name = "labelYearText_PAO";
+            this.labelYearText_PAO.Size = new System.Drawing.Size(46, 17);
+            this.labelYearText_PAO.TabIndex = 10;
+            this.labelYearText_PAO.Text = "label1";
             // 
             // labelYear_PAO
             // 
@@ -243,132 +346,6 @@ namespace Tyuiu.PostikaAO.Sprint7.Project.V9
             this.labelScreenwriter_PAO.TabIndex = 9;
             this.labelScreenwriter_PAO.Text = "Сценарист:";
             // 
-            // labelRole_PAO
-            // 
-            this.labelRole_PAO.AutoSize = true;
-            this.labelRole_PAO.Location = new System.Drawing.Point(316, 235);
-            this.labelRole_PAO.Name = "labelRole_PAO";
-            this.labelRole_PAO.Size = new System.Drawing.Size(63, 17);
-            this.labelRole_PAO.TabIndex = 10;
-            this.labelRole_PAO.Text = "В ролях:";
-            // 
-            // labelCountry_PAO
-            // 
-            this.labelCountry_PAO.AutoSize = true;
-            this.labelCountry_PAO.Location = new System.Drawing.Point(319, 272);
-            this.labelCountry_PAO.Name = "labelCountry_PAO";
-            this.labelCountry_PAO.Size = new System.Drawing.Size(60, 17);
-            this.labelCountry_PAO.TabIndex = 11;
-            this.labelCountry_PAO.Text = "Страна:";
-            // 
-            // labelStudio_PAO
-            // 
-            this.labelStudio_PAO.AutoSize = true;
-            this.labelStudio_PAO.Location = new System.Drawing.Point(320, 316);
-            this.labelStudio_PAO.Name = "labelStudio_PAO";
-            this.labelStudio_PAO.Size = new System.Drawing.Size(59, 17);
-            this.labelStudio_PAO.TabIndex = 12;
-            this.labelStudio_PAO.Text = "Студия:";
-            // 
-            // labelDescription_PAO
-            // 
-            this.labelDescription_PAO.AutoSize = true;
-            this.labelDescription_PAO.Location = new System.Drawing.Point(316, 354);
-            this.labelDescription_PAO.Name = "labelDescription_PAO";
-            this.labelDescription_PAO.Size = new System.Drawing.Size(78, 17);
-            this.labelDescription_PAO.TabIndex = 13;
-            this.labelDescription_PAO.Text = "Описание:";
-            // 
-            // labelYearText_PAO
-            // 
-            this.labelYearText_PAO.AutoSize = true;
-            this.labelYearText_PAO.Location = new System.Drawing.Point(365, 75);
-            this.labelYearText_PAO.Name = "labelYearText_PAO";
-            this.labelYearText_PAO.Size = new System.Drawing.Size(46, 17);
-            this.labelYearText_PAO.TabIndex = 10;
-            this.labelYearText_PAO.Text = "label1";
-            // 
-            // labelGenreText_PAO
-            // 
-            this.labelGenreText_PAO.AutoSize = true;
-            this.labelGenreText_PAO.Location = new System.Drawing.Point(366, 111);
-            this.labelGenreText_PAO.Name = "labelGenreText_PAO";
-            this.labelGenreText_PAO.Size = new System.Drawing.Size(46, 17);
-            this.labelGenreText_PAO.TabIndex = 11;
-            this.labelGenreText_PAO.Text = "label2";
-            // 
-            // labelDirectorText_PAO
-            // 
-            this.labelDirectorText_PAO.AutoSize = true;
-            this.labelDirectorText_PAO.Location = new System.Drawing.Point(408, 146);
-            this.labelDirectorText_PAO.Name = "labelDirectorText_PAO";
-            this.labelDirectorText_PAO.Size = new System.Drawing.Size(46, 17);
-            this.labelDirectorText_PAO.TabIndex = 12;
-            this.labelDirectorText_PAO.Text = "label3";
-            // 
-            // labelScreenwriterText_PAO
-            // 
-            this.labelScreenwriterText_PAO.AutoSize = true;
-            this.labelScreenwriterText_PAO.Location = new System.Drawing.Point(419, 199);
-            this.labelScreenwriterText_PAO.Name = "labelScreenwriterText_PAO";
-            this.labelScreenwriterText_PAO.Size = new System.Drawing.Size(46, 17);
-            this.labelScreenwriterText_PAO.TabIndex = 13;
-            this.labelScreenwriterText_PAO.Text = "label4";
-            // 
-            // labelRoleText_PAO
-            // 
-            this.labelRoleText_PAO.AutoSize = true;
-            this.labelRoleText_PAO.Location = new System.Drawing.Point(408, 235);
-            this.labelRoleText_PAO.Name = "labelRoleText_PAO";
-            this.labelRoleText_PAO.Size = new System.Drawing.Size(46, 17);
-            this.labelRoleText_PAO.TabIndex = 14;
-            this.labelRoleText_PAO.Text = "label5";
-            // 
-            // labelCountryText_PAO
-            // 
-            this.labelCountryText_PAO.AutoSize = true;
-            this.labelCountryText_PAO.Location = new System.Drawing.Point(396, 272);
-            this.labelCountryText_PAO.Name = "labelCountryText_PAO";
-            this.labelCountryText_PAO.Size = new System.Drawing.Size(46, 17);
-            this.labelCountryText_PAO.TabIndex = 15;
-            this.labelCountryText_PAO.Text = "label6";
-            // 
-            // labelStudioText_PAO
-            // 
-            this.labelStudioText_PAO.AutoSize = true;
-            this.labelStudioText_PAO.Location = new System.Drawing.Point(396, 316);
-            this.labelStudioText_PAO.Name = "labelStudioText_PAO";
-            this.labelStudioText_PAO.Size = new System.Drawing.Size(46, 17);
-            this.labelStudioText_PAO.TabIndex = 16;
-            this.labelStudioText_PAO.Text = "label7";
-            // 
-            // labelDescriptionText_PAO
-            // 
-            this.labelDescriptionText_PAO.AutoSize = true;
-            this.labelDescriptionText_PAO.Location = new System.Drawing.Point(419, 354);
-            this.labelDescriptionText_PAO.Name = "labelDescriptionText_PAO";
-            this.labelDescriptionText_PAO.Size = new System.Drawing.Size(46, 17);
-            this.labelDescriptionText_PAO.TabIndex = 17;
-            this.labelDescriptionText_PAO.Text = "label8";
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(3, 3);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(125, 160);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(134, 3);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(125, 160);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -384,7 +361,6 @@ namespace Tyuiu.PostikaAO.Sprint7.Project.V9
             this.groupBoxActions_PAO.ResumeLayout(false);
             this.groupBoxSearch_PAO.ResumeLayout(false);
             this.groupBoxSearch_PAO.PerformLayout();
-            this.flowLayoutPanelLeft_PAO.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupBoxInformation_PAO.ResumeLayout(false);
             this.groupBoxInformation_PAO.PerformLayout();
@@ -422,8 +398,6 @@ namespace Tyuiu.PostikaAO.Sprint7.Project.V9
         private System.Windows.Forms.Label labelDirectorText_PAO;
         private System.Windows.Forms.Label labelGenreText_PAO;
         private System.Windows.Forms.Label labelYearText_PAO;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
     }
 }
 

@@ -9,16 +9,57 @@ using System.IO;
 namespace Tyuiu.PostikaAO.Sprint7.Project.V9.Lib
 {
     public class DataService
-    {
+    { 
+        string pathImg = $@"{Directory.GetCurrentDirectory()}\img";
+        string pathData = $@"{Directory.GetCurrentDirectory()}\FilmsData.csv";
         public void AddFilm(string[] values)
         {
-            string pathText = $@"{Directory.GetCurrentDirectory()}\FilmsData.txt";
-            string pathImage = $@"{Directory.GetCurrentDirectory()}";
-            File.Copy(values[0], pathImage);
+            bool isFirst = false;
+            if(!Directory.Exists(pathImg))
+            {
+                Directory.CreateDirectory(pathImg);
+                isFirst = true;
+            }
+
             string[] temp = values[0].Split('\\');
-            string fileName = temp[temp.Length-1];
-            values[0] = pathImage+@"\"+fileName;
-            File.AppendAllText(pathText, String.Join("|",values)+"\n");
+            string fileName = temp[temp.Length - 1];
+
+            temp = fileName.Split('.');
+
+            string fileFormat = '.' + temp[1];
+            fileName = temp[0];
+
+            string copyTo = pathImg + fileName + fileFormat;
+            string copyFrom = values[0];
+
+            int additionNum = 0;
+            while (File.Exists(copyTo))
+            {
+                additionNum++;
+                copyTo = pathImg + fileName + additionNum + fileFormat;
+            }
+            File.Copy(copyFrom, copyTo);
+            values[0] = copyTo;
+
+            FileInfo fileInfo = new FileInfo(copyTo);
+            bool fileExists = fileInfo.Exists;
+
+            if (fileExists)
+            {
+                File.Delete(copyTo);
+            }
+
+            string finalLine = string.Join(";", values);
+            if (isFirst)
+            {
+                File.AppendAllText(pathData, finalLine);
+
+            }
+            else
+            {
+                File.AppendAllText(pathData, Environment.NewLine+finalLine);
+
+            }
         }
         public string[] OpenFilm(int lineNum)
         {
