@@ -20,24 +20,24 @@ namespace Tyuiu.PostikaAO.Sprint7.Project.V9
         DataService ds = new DataService();
         private void buttonAdd_PAO_Click(object sender, EventArgs e)
         {
-            
-            string[] values = new string[9];
+            string[] values = new string[10];
 
-
-            if(pathImage==""&& !string.IsNullOrEmpty(textBoxlName_PAO.Text)&& !string.IsNullOrEmpty(textBoxlName_PAO.Text) && !string.IsNullOrEmpty(textBoxScreenwriter_PAO.Text)&& !string.IsNullOrEmpty(textBoxDirector_PAO.Text) && !string.IsNullOrEmpty(textBoxGenre_PAO.Text) && !string.IsNullOrEmpty(textBoxRole_PAO.Text) && !string.IsNullOrEmpty(textBoxStudio_PAO.Text) && !string.IsNullOrEmpty(textBoxYear_PAO.Text) && !string.IsNullOrEmpty(textBoxDescription_PAO.Text))
+            if(pathImage != "" && !string.IsNullOrEmpty(textBoxName_PAO.Text)&& !string.IsNullOrEmpty(textBoxName_PAO.Text) && !string.IsNullOrEmpty(textBoxScreenwriter_PAO.Text)&& !string.IsNullOrEmpty(textBoxDirector_PAO.Text) && !string.IsNullOrEmpty(textBoxGenre_PAO.Text) && !string.IsNullOrEmpty(textBoxRole_PAO.Text) && !string.IsNullOrEmpty(textBoxStudio_PAO.Text) && !string.IsNullOrEmpty(textBoxYear_PAO.Text) && !string.IsNullOrEmpty(textBoxDescription_PAO.Text))
             {
                 values[0] = pathImage;
-                values[1] = textBoxlName_PAO.Text;
-                values[2] = textBoxCountry_PAO.Text;
-                values[3] = textBoxScreenwriter_PAO.Text;
+                values[1] = textBoxName_PAO.Text;
+                values[2] = textBoxYear_PAO.Text;
+                values[3] = textBoxGenre_PAO.Text;
                 values[4] = textBoxDirector_PAO.Text;
-                values[5] = textBoxGenre_PAO.Text;
-                values[6] = textBoxRole_PAO.Text;
+                values[5] = textBoxScreenwriter_PAO.Text;
+                values[6] = textBoxCountry_PAO.Text;
                 values[7] = textBoxStudio_PAO.Text;
-                values[8] = textBoxYear_PAO.Text;
+                values[8] = textBoxRole_PAO.Text;
                 values[9] = textBoxDescription_PAO.Text;
 
                 ds.AddFilm(values);
+
+                this.Close();
             }
             else
             {

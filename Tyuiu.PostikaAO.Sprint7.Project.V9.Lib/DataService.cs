@@ -10,7 +10,7 @@ namespace Tyuiu.PostikaAO.Sprint7.Project.V9.Lib
 {
     public class DataService
     { 
-        string pathImg = $@"{Directory.GetCurrentDirectory()}\img";
+        string pathImg = $@"{Directory.GetCurrentDirectory()}\img\";
         string pathData = $@"{Directory.GetCurrentDirectory()}\FilmsData.csv";
         public void AddFilm(string[] values)
         {
@@ -20,7 +20,6 @@ namespace Tyuiu.PostikaAO.Sprint7.Project.V9.Lib
                 Directory.CreateDirectory(pathImg);
                 isFirst = true;
             }
-
             string[] temp = values[0].Split('\\');
             string fileName = temp[temp.Length - 1];
 
@@ -46,20 +45,21 @@ namespace Tyuiu.PostikaAO.Sprint7.Project.V9.Lib
 
             if (fileExists)
             {
-                File.Delete(copyTo);
+                File.Delete(pathData);
             }
 
             string finalLine = string.Join(";", values);
+            Encoding ru = Encoding.GetEncoding(1251);
             if (isFirst)
             {
-                File.AppendAllText(pathData, finalLine);
-
+                File.AppendAllText(pathData, finalLine, ru);
             }
             else
             {
-                File.AppendAllText(pathData, Environment.NewLine+finalLine);
-
+                File.AppendAllText(pathData, Environment.NewLine + finalLine, ru);
             }
+            
+            
         }
         public string[] OpenFilm(int lineNum)
         {

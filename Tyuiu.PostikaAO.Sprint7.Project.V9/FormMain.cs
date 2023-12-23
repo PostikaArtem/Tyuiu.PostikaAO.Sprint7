@@ -43,5 +43,34 @@ namespace Tyuiu.PostikaAO.Sprint7.Project.V9
             labelStudioText_PAO.Text = data[7];
             labelDescriptionText_PAO.Text = data[8];
         }
+
+        private void UpdateFilmsButtons()
+        {
+            flowLayoutPanelLeft_PAO.Controls.Clear();
+            
+        }
+
+        private void labelRoleText_PAO_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBoxSearch_PAO_Enter(object sender, EventArgs e)
+        {
+            if(textBoxSearch_PAO.Text == "Поиск...")
+            {
+                textBoxSearch_PAO.Text = "";
+                textBoxSearch_PAO.ForeColor = Color.Black;
+            }
+        }
+
+        private void textBoxSearch_PAO_Leave(object sender, EventArgs e)
+        {
+            if (textBoxSearch_PAO.Text == "")
+            {
+                textBoxSearch_PAO.Text = "Поиск...";
+                textBoxSearch_PAO.ForeColor = Color.Silver;
+            }
+        }
     }
 }
