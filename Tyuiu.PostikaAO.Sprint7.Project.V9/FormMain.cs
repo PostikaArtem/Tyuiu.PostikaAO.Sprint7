@@ -305,5 +305,11 @@ namespace Tyuiu.PostikaAO.Sprint7.Project.V9
                 toolStripTextBoxSearch_PAO.ForeColor = Color.Silver;
             }
         }
+
+        private void toolStripButtonHelp_PAO_Click(object sender, EventArgs e)
+        {
+            FormHelp formHelp = new FormHelp();
+            formHelp.ShowDialog();
+        }
     }
 }

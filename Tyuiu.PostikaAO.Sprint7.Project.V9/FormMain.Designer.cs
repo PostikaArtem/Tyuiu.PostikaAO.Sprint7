@@ -78,7 +78,7 @@ namespace Tyuiu.PostikaAO.Sprint7.Project.V9
             this.toolStripButtonHelp_PAO});
             this.toolStripMenu_PAO.Location = new System.Drawing.Point(0, 0);
             this.toolStripMenu_PAO.Name = "toolStripMenu_PAO";
-            this.toolStripMenu_PAO.Size = new System.Drawing.Size(1349, 31);
+            this.toolStripMenu_PAO.Size = new System.Drawing.Size(1349, 27);
             this.toolStripMenu_PAO.TabIndex = 3;
             this.toolStripMenu_PAO.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.toolStrip1_ItemClicked);
             // 
@@ -376,8 +376,9 @@ namespace Tyuiu.PostikaAO.Sprint7.Project.V9
             this.toolStripButtonHelp_PAO.Image = global::Tyuiu.PostikaAO.Sprint7.Project.V9.Properties.Resources.sign_question_icon_34359;
             this.toolStripButtonHelp_PAO.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButtonHelp_PAO.Name = "toolStripButtonHelp_PAO";
-            this.toolStripButtonHelp_PAO.Size = new System.Drawing.Size(29, 28);
+            this.toolStripButtonHelp_PAO.Size = new System.Drawing.Size(29, 24);
             this.toolStripButtonHelp_PAO.Text = "Сведенья о программе";
+            this.toolStripButtonHelp_PAO.Click += new System.EventHandler(this.toolStripButtonHelp_PAO_Click);
             // 
             // pictureBoxPreview_PAO
             // 
