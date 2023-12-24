@@ -15,7 +15,7 @@ namespace Tyuiu.PostikaAO.Sprint7.Project.V9.Lib
         public void AddFilm(string[] values)
         {
             bool isFirst = false;
-            if(!Directory.Exists(pathImg))
+            if(!File.Exists(pathData))
             {
                 Directory.CreateDirectory(pathImg);
                 isFirst = true;
@@ -42,7 +42,7 @@ namespace Tyuiu.PostikaAO.Sprint7.Project.V9.Lib
 
 
             string finalLine = string.Join(";", values);
-            Encoding ru = Encoding.GetEncoding(1251);
+            
             if (isFirst)
             {
                 File.AppendAllText(pathData, finalLine, Encoding.Unicode);
@@ -144,6 +144,26 @@ namespace Tyuiu.PostikaAO.Sprint7.Project.V9.Lib
             }
 
             return result;
+        }
+
+
+        public void ClearUnusedImages()
+        {
+            if (Directory.Exists(pathImg))
+            {
+                string[] directory = Directory.GetFiles(pathImg);
+                foreach (string item in directory)
+                {
+                    try
+                    {
+                        File.Delete(item);
+                    }
+                    catch
+                    {
+                        // игнорируем используемые в данный момент файлы
+                    }
+                }
+            }
         }
     }
 }

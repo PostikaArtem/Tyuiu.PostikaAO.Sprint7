@@ -253,11 +253,11 @@ namespace Tyuiu.PostikaAO.Sprint7.Project.V9
             this.labelName_PAO.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.labelName_PAO.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labelName_PAO.Location = new System.Drawing.Point(479, 18);
+            this.labelName_PAO.Location = new System.Drawing.Point(491, 21);
             this.labelName_PAO.Name = "labelName_PAO";
-            this.labelName_PAO.Size = new System.Drawing.Size(569, 52);
+            this.labelName_PAO.Size = new System.Drawing.Size(551, 52);
             this.labelName_PAO.TabIndex = 5;
-            this.labelName_PAO.Text = "Выберите или добавьте фильм";
+            this.labelName_PAO.Text = "Выберите фильм ";
             // 
             // labelRole_PAO
             // 

@@ -15,18 +15,16 @@ namespace Tyuiu.PostikaAO.Sprint7.Project.V9
 {
     public partial class FormMain : Form
     {
+        DataService ds = new DataService();
+        int openedFilm = -1;
+
+
         public FormMain()
         {
             InitializeComponent();
             UpdateFilmsButtons();
-            ClearUnusedImages();
+            ds.ClearUnusedImages();
         }
-       
-        
-        DataService ds = new DataService();
-        int openedFilm = -1;
-        Size buttonSize = new Size(94, 141);
-        string[] genres = { "Боевик", "Детектив", "Драма", "Исторический фильм", "Комедия", "Музыкальный фильм", "Триллер" }; 
         
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -106,6 +104,7 @@ namespace Tyuiu.PostikaAO.Sprint7.Project.V9
 
         private Button CreateButton(string filmName, int lineNum, string pathImage)
         {
+            Size buttonSize = new Size(94, 141);
             Button openButton = new Button();
             openButton.Size = buttonSize;
             openButton.Text = filmName;
@@ -128,7 +127,7 @@ namespace Tyuiu.PostikaAO.Sprint7.Project.V9
         private void InfoReset()
         {
             pictureBoxPreview_PAO.Image = Properties.Resources.imagePlaceholder;
-            labelName_PAO.Text = "Выберите или добавьте фильм";
+            labelName_PAO.Text = "Выберите фильм";
             labelCountryText_PAO.Text = "-";
             labelScreenwriterText_PAO.Text = "-";
             labelDirectorText_PAO.Text = "-";
@@ -156,31 +155,11 @@ namespace Tyuiu.PostikaAO.Sprint7.Project.V9
 
         }
 
-
-        private void ClearUnusedImages()
-        {
-            string pathImages = $@"{Directory.GetCurrentDirectory()}\images\";
-            if (Directory.Exists(pathImages))
-            {
-                string[] directory = Directory.GetFiles(pathImages);
-                foreach (string item in directory)
-                {
-                    try
-                    {
-                        File.Delete(item);
-                    }
-                    catch
-                    {
-                        // игнорируем используемые в данный момент файлы
-                    }
-                }
-            }
-        }
-
         private void OpenFilm(Object sender, EventArgs e)
         {
+            string[] genres = { "Боевик", "Детектив", "Драма", "Исторический фильм", "Комедия", "Музыкальный фильм", "Триллер" };
             Button b = (Button)sender;
-            //int num = int.Parse(b.Tag.ToString());
+           
             openedFilm = b.TabIndex;
 
             string[] data = ds.GetNecessaryFilmInfo(openedFilm);
