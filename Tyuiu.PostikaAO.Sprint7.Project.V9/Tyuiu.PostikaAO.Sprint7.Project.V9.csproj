@@ -114,5 +114,29 @@
   <ItemGroup>
     <None Include="Resources\imageLoadError.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\application_add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sign-add-icon_34367.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sign-error-icon_34362.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sign-add-icon_34367 копия.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sign-question-icon_34359.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\stats.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -287,5 +287,23 @@ namespace Tyuiu.PostikaAO.Sprint7.Project.V9
 
 
         }
+
+        private void toolStripTextBoxSearch_PAO_Enter(object sender, EventArgs e)
+        {
+            if(toolStripTextBoxSearch_PAO.Text == "Поиск...")
+            {
+                toolStripTextBoxSearch_PAO.Text = "";
+                toolStripTextBoxSearch_PAO.ForeColor = Color.Black;
+            }
+        }
+
+        private void toolStripTextBoxSearch_PAO_Leave(object sender, EventArgs e)
+        {
+            if (toolStripTextBoxSearch_PAO.Text == "")
+            {
+                toolStripTextBoxSearch_PAO.Text = "Поиск...";
+                toolStripTextBoxSearch_PAO.ForeColor = Color.Silver;
+            }
+        }
     }
 }
