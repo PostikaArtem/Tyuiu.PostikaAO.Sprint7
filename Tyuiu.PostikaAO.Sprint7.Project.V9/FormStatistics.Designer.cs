@@ -30,7 +30,6 @@ namespace Tyuiu.PostikaAO.Sprint7.Project.V9
         private void InitializeComponent()
         {
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.chartGenreStatistics_PAO = new System.Windows.Forms.DataVisualization.Charting.Chart();
             ((System.ComponentModel.ISupportInitialize)(this.chartGenreStatistics_PAO)).BeginInit();
@@ -38,15 +37,19 @@ namespace Tyuiu.PostikaAO.Sprint7.Project.V9
             // 
             // chartGenreStatistics_PAO
             // 
-            chartArea1.Name = "ChartArea1";
+            chartArea1.AxisX.MajorGrid.Interval = 1D;
+            chartArea1.AxisX.MajorTickMark.Interval = 1D;
+            chartArea1.AxisY.Interval = 1D;
+            chartArea1.AxisY.MajorGrid.Interval = 1D;
+            chartArea1.AxisY.MajorTickMark.Interval = 1D;
+            chartArea1.AxisY.ScaleBreakStyle.BreakLineStyle = System.Windows.Forms.DataVisualization.Charting.BreakLineStyle.Straight;
+            chartArea1.AxisY.ScaleBreakStyle.Enabled = true;
+            chartArea1.Name = "ChartAreaGenre_PAO";
             this.chartGenreStatistics_PAO.ChartAreas.Add(chartArea1);
             this.chartGenreStatistics_PAO.Dock = System.Windows.Forms.DockStyle.Fill;
-            legend1.Name = "Legend1";
-            this.chartGenreStatistics_PAO.Legends.Add(legend1);
             this.chartGenreStatistics_PAO.Location = new System.Drawing.Point(0, 0);
             this.chartGenreStatistics_PAO.Name = "chartGenreStatistics_PAO";
-            series1.ChartArea = "ChartArea1";
-            series1.Legend = "Legend1";
+            series1.ChartArea = "ChartAreaGenre_PAO";
             series1.Name = "Series1";
             this.chartGenreStatistics_PAO.Series.Add(series1);
             this.chartGenreStatistics_PAO.Size = new System.Drawing.Size(703, 443);
@@ -61,7 +64,8 @@ namespace Tyuiu.PostikaAO.Sprint7.Project.V9
             this.Controls.Add(this.chartGenreStatistics_PAO);
             this.MinimumSize = new System.Drawing.Size(721, 490);
             this.Name = "FormStatistics";
-            this.Text = "FormStatistics";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Статистика по жанрам";
             ((System.ComponentModel.ISupportInitialize)(this.chartGenreStatistics_PAO)).EndInit();
             this.ResumeLayout(false);
 

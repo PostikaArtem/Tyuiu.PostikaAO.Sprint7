@@ -82,9 +82,8 @@ namespace Tyuiu.PostikaAO.Sprint7.Project.V9
         {
             flowLayoutPanelLeft_PAO.Controls.Clear();
 
-            string[] allFilmsNames = ds.GetNecessaryFilmInfo(1);
-            string[] allFilmsImages = ds.GetNecessaryFilmInfo(0);
-            bool[] correctFilm = new bool[allFilmsNames.Length];
+            string[] allFilmsNames = ds.GetNecessaryTypeInfo(1);
+            string[] allFilmsImages = ds.GetNecessaryTypeInfo(0);
 
             for (int i = 0; i < allFilmsNames.Length; i++)
             {
@@ -284,6 +283,7 @@ namespace Tyuiu.PostikaAO.Sprint7.Project.V9
         private void toolStripButton1_Click_3(object sender, EventArgs e)
         {
             FormStatistics formStatistics = new FormStatistics();
+            formStatistics.ShowDialog();
 
 
         }

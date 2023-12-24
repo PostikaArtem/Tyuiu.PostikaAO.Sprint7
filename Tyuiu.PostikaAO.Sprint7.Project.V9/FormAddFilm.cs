@@ -55,5 +55,9 @@ namespace Tyuiu.PostikaAO.Sprint7.Project.V9
            
         }
 
+        private void comboBoxGenre_PAO_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

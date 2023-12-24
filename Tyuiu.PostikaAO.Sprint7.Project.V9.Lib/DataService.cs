@@ -40,13 +40,6 @@ namespace Tyuiu.PostikaAO.Sprint7.Project.V9.Lib
             File.Copy(copyFrom, copyTo);
             values[0] = copyTo;
 
-            //FileInfo fileInfo = new FileInfo(copyTo);
-            //bool fileExists = fileInfo.Exists;
-
-            //if (fileExists)
-            //{
-            //    File.Delete(pathData);
-            //}
 
             string finalLine = string.Join(";", values);
             Encoding ru = Encoding.GetEncoding(1251);
@@ -140,8 +133,15 @@ namespace Tyuiu.PostikaAO.Sprint7.Project.V9.Lib
 
         public int[] GetGenreStatistics()
         {
-            int[] result=new int[1];
-            int filmCount = 0;
+            int[] result = new int[7];
+            int filmCount = GetFilmCount();
+
+            for (int i = 0; i < filmCount; i++)
+            {
+                int genreType = int.Parse(GetNecessaryFilmInfo(i)[3]);
+
+                result[genreType] += 1;
+            }
 
             return result;
         }

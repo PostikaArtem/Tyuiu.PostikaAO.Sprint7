@@ -38,7 +38,6 @@ namespace Tyuiu.PostikaAO.Sprint7.Project.V9
             this.textBoxStudio_PAO = new System.Windows.Forms.TextBox();
             this.textBoxCountry_PAO = new System.Windows.Forms.TextBox();
             this.buttonAdd_PAO = new System.Windows.Forms.Button();
-            this.pictureBoxPreview_PAO = new System.Windows.Forms.PictureBox();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.labelName_PAO = new System.Windows.Forms.Label();
             this.labelYear_PAO = new System.Windows.Forms.Label();
@@ -51,6 +50,7 @@ namespace Tyuiu.PostikaAO.Sprint7.Project.V9
             this.labelDescription_PAO = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.comboBoxGenre_PAO = new System.Windows.Forms.ComboBox();
+            this.pictureBoxPreview_PAO = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPreview_PAO)).BeginInit();
             this.SuspendLayout();
             // 
@@ -119,18 +119,6 @@ namespace Tyuiu.PostikaAO.Sprint7.Project.V9
             this.buttonAdd_PAO.Text = "Добавить";
             this.buttonAdd_PAO.UseVisualStyleBackColor = true;
             this.buttonAdd_PAO.Click += new System.EventHandler(this.buttonAdd_PAO_Click);
-            // 
-            // pictureBoxPreview_PAO
-            // 
-            this.pictureBoxPreview_PAO.BackColor = System.Drawing.SystemColors.ButtonShadow;
-            this.pictureBoxPreview_PAO.Image = global::Tyuiu.PostikaAO.Sprint7.Project.V9.Properties.Resources.imageLoadPlaceholder;
-            this.pictureBoxPreview_PAO.Location = new System.Drawing.Point(29, 19);
-            this.pictureBoxPreview_PAO.Name = "pictureBoxPreview_PAO";
-            this.pictureBoxPreview_PAO.Size = new System.Drawing.Size(196, 256);
-            this.pictureBoxPreview_PAO.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBoxPreview_PAO.TabIndex = 11;
-            this.pictureBoxPreview_PAO.TabStop = false;
-            this.pictureBoxPreview_PAO.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // openFileDialog1
             // 
@@ -244,6 +232,19 @@ namespace Tyuiu.PostikaAO.Sprint7.Project.V9
             this.comboBoxGenre_PAO.Name = "comboBoxGenre_PAO";
             this.comboBoxGenre_PAO.Size = new System.Drawing.Size(150, 24);
             this.comboBoxGenre_PAO.TabIndex = 22;
+            this.comboBoxGenre_PAO.SelectedIndexChanged += new System.EventHandler(this.comboBoxGenre_PAO_SelectedIndexChanged);
+            // 
+            // pictureBoxPreview_PAO
+            // 
+            this.pictureBoxPreview_PAO.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.pictureBoxPreview_PAO.Image = global::Tyuiu.PostikaAO.Sprint7.Project.V9.Properties.Resources.imageLoadPlaceholder;
+            this.pictureBoxPreview_PAO.Location = new System.Drawing.Point(29, 19);
+            this.pictureBoxPreview_PAO.Name = "pictureBoxPreview_PAO";
+            this.pictureBoxPreview_PAO.Size = new System.Drawing.Size(196, 256);
+            this.pictureBoxPreview_PAO.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxPreview_PAO.TabIndex = 11;
+            this.pictureBoxPreview_PAO.TabStop = false;
+            this.pictureBoxPreview_PAO.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // FormAddFilm
             // 

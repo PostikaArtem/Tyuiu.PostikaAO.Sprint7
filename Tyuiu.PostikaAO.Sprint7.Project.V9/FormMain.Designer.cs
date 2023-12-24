@@ -30,7 +30,6 @@ namespace Tyuiu.PostikaAO.Sprint7.Project.V9
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
-            this.panelTop_PAO = new System.Windows.Forms.Panel();
             this.toolStripMenu_PAO = new System.Windows.Forms.ToolStrip();
             this.flowLayoutPanelLeft_PAO = new System.Windows.Forms.FlowLayoutPanel();
             this.labelScreenwriter_PAO = new System.Windows.Forms.Label();
@@ -51,28 +50,18 @@ namespace Tyuiu.PostikaAO.Sprint7.Project.V9
             this.labelRole_PAO = new System.Windows.Forms.Label();
             this.labelDescription_PAO = new System.Windows.Forms.Label();
             this.groupBoxInformation_PAO = new System.Windows.Forms.GroupBox();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripSeparator1_PAO = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripTextBoxSearch_PAO = new System.Windows.Forms.ToolStripTextBox();
-            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripSeparator2_PAO = new System.Windows.Forms.ToolStripSeparator();
             this.pictureBoxPreview_PAO = new System.Windows.Forms.PictureBox();
             this.toolStripButtonAdd_PAO = new System.Windows.Forms.ToolStripButton();
             this.toolStripButtonDelete_PAO = new System.Windows.Forms.ToolStripButton();
             this.toolStripButtonSearch_PAO = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
-            this.panelTop_PAO.SuspendLayout();
+            this.toolStripButtonStat_PAO = new System.Windows.Forms.ToolStripButton();
             this.toolStripMenu_PAO.SuspendLayout();
             this.groupBoxInformation_PAO.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPreview_PAO)).BeginInit();
             this.SuspendLayout();
-            // 
-            // panelTop_PAO
-            // 
-            this.panelTop_PAO.Controls.Add(this.toolStripMenu_PAO);
-            this.panelTop_PAO.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelTop_PAO.Location = new System.Drawing.Point(0, 0);
-            this.panelTop_PAO.Name = "panelTop_PAO";
-            this.panelTop_PAO.Size = new System.Drawing.Size(1349, 26);
-            this.panelTop_PAO.TabIndex = 0;
             // 
             // toolStripMenu_PAO
             // 
@@ -80,14 +69,14 @@ namespace Tyuiu.PostikaAO.Sprint7.Project.V9
             this.toolStripMenu_PAO.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripButtonAdd_PAO,
             this.toolStripButtonDelete_PAO,
-            this.toolStripSeparator1,
+            this.toolStripSeparator1_PAO,
             this.toolStripTextBoxSearch_PAO,
             this.toolStripButtonSearch_PAO,
-            this.toolStripSeparator2,
-            this.toolStripButton1});
+            this.toolStripSeparator2_PAO,
+            this.toolStripButtonStat_PAO});
             this.toolStripMenu_PAO.Location = new System.Drawing.Point(0, 0);
             this.toolStripMenu_PAO.Name = "toolStripMenu_PAO";
-            this.toolStripMenu_PAO.Size = new System.Drawing.Size(1349, 27);
+            this.toolStripMenu_PAO.Size = new System.Drawing.Size(1349, 31);
             this.toolStripMenu_PAO.TabIndex = 3;
             this.toolStripMenu_PAO.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.toolStrip1_ItemClicked);
             // 
@@ -97,9 +86,9 @@ namespace Tyuiu.PostikaAO.Sprint7.Project.V9
             | System.Windows.Forms.AnchorStyles.Left)));
             this.flowLayoutPanelLeft_PAO.AutoScroll = true;
             this.flowLayoutPanelLeft_PAO.BackColor = System.Drawing.SystemColors.ButtonShadow;
-            this.flowLayoutPanelLeft_PAO.Location = new System.Drawing.Point(0, 32);
+            this.flowLayoutPanelLeft_PAO.Location = new System.Drawing.Point(0, 30);
             this.flowLayoutPanelLeft_PAO.Name = "flowLayoutPanelLeft_PAO";
-            this.flowLayoutPanelLeft_PAO.Size = new System.Drawing.Size(296, 656);
+            this.flowLayoutPanelLeft_PAO.Size = new System.Drawing.Size(296, 653);
             this.flowLayoutPanelLeft_PAO.TabIndex = 1;
             // 
             // labelScreenwriter_PAO
@@ -318,21 +307,21 @@ namespace Tyuiu.PostikaAO.Sprint7.Project.V9
             this.groupBoxInformation_PAO.TabIndex = 3;
             this.groupBoxInformation_PAO.TabStop = false;
             // 
-            // toolStripSeparator1
+            // toolStripSeparator1_PAO
             // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 27);
+            this.toolStripSeparator1_PAO.Name = "toolStripSeparator1_PAO";
+            this.toolStripSeparator1_PAO.Size = new System.Drawing.Size(6, 31);
             // 
             // toolStripTextBoxSearch_PAO
             // 
             this.toolStripTextBoxSearch_PAO.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.toolStripTextBoxSearch_PAO.Name = "toolStripTextBoxSearch_PAO";
-            this.toolStripTextBoxSearch_PAO.Size = new System.Drawing.Size(187, 27);
+            this.toolStripTextBoxSearch_PAO.Size = new System.Drawing.Size(187, 31);
             // 
-            // toolStripSeparator2
+            // toolStripSeparator2_PAO
             // 
-            this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 27);
+            this.toolStripSeparator2_PAO.Name = "toolStripSeparator2_PAO";
+            this.toolStripSeparator2_PAO.Size = new System.Drawing.Size(6, 31);
             // 
             // pictureBoxPreview_PAO
             // 
@@ -352,7 +341,7 @@ namespace Tyuiu.PostikaAO.Sprint7.Project.V9
             this.toolStripButtonAdd_PAO.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonAdd_PAO.Image")));
             this.toolStripButtonAdd_PAO.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButtonAdd_PAO.Name = "toolStripButtonAdd_PAO";
-            this.toolStripButtonAdd_PAO.Size = new System.Drawing.Size(29, 24);
+            this.toolStripButtonAdd_PAO.Size = new System.Drawing.Size(29, 28);
             this.toolStripButtonAdd_PAO.Text = "Добавить фильм";
             this.toolStripButtonAdd_PAO.Click += new System.EventHandler(this.toolStripButton1_Click);
             // 
@@ -362,7 +351,7 @@ namespace Tyuiu.PostikaAO.Sprint7.Project.V9
             this.toolStripButtonDelete_PAO.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonDelete_PAO.Image")));
             this.toolStripButtonDelete_PAO.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButtonDelete_PAO.Name = "toolStripButtonDelete_PAO";
-            this.toolStripButtonDelete_PAO.Size = new System.Drawing.Size(29, 24);
+            this.toolStripButtonDelete_PAO.Size = new System.Drawing.Size(29, 28);
             this.toolStripButtonDelete_PAO.Text = "Удалить фильм";
             this.toolStripButtonDelete_PAO.Click += new System.EventHandler(this.toolStripButton2_Click);
             // 
@@ -372,47 +361,44 @@ namespace Tyuiu.PostikaAO.Sprint7.Project.V9
             this.toolStripButtonSearch_PAO.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonSearch_PAO.Image")));
             this.toolStripButtonSearch_PAO.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButtonSearch_PAO.Name = "toolStripButtonSearch_PAO";
-            this.toolStripButtonSearch_PAO.Size = new System.Drawing.Size(29, 24);
+            this.toolStripButtonSearch_PAO.Size = new System.Drawing.Size(29, 28);
             this.toolStripButtonSearch_PAO.Text = "Поиск фильма";
             this.toolStripButtonSearch_PAO.Click += new System.EventHandler(this.toolStripButton1_Click_2);
             // 
-            // toolStripButton1
+            // toolStripButtonStat_PAO
             // 
-            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
-            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(29, 24);
-            this.toolStripButton1.Text = "toolStripButton1";
-            this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click_3);
+            this.toolStripButtonStat_PAO.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButtonStat_PAO.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonStat_PAO.Image")));
+            this.toolStripButtonStat_PAO.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonStat_PAO.Name = "toolStripButtonStat_PAO";
+            this.toolStripButtonStat_PAO.Size = new System.Drawing.Size(29, 28);
+            this.toolStripButtonStat_PAO.Text = "Статистика по жанрам";
+            this.toolStripButtonStat_PAO.Click += new System.EventHandler(this.toolStripButton1_Click_3);
             // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1349, 688);
+            this.Controls.Add(this.toolStripMenu_PAO);
             this.Controls.Add(this.groupBoxInformation_PAO);
             this.Controls.Add(this.flowLayoutPanelLeft_PAO);
-            this.Controls.Add(this.panelTop_PAO);
             this.MinimumSize = new System.Drawing.Size(1367, 735);
             this.Name = "FormMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Спринт 7 | Проект | Вариант 9 | Постика А.О.";
             this.Load += new System.EventHandler(this.FormMain_Load);
-            this.panelTop_PAO.ResumeLayout(false);
-            this.panelTop_PAO.PerformLayout();
             this.toolStripMenu_PAO.ResumeLayout(false);
             this.toolStripMenu_PAO.PerformLayout();
             this.groupBoxInformation_PAO.ResumeLayout(false);
             this.groupBoxInformation_PAO.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPreview_PAO)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Panel panelTop_PAO;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanelLeft_PAO;
         private System.Windows.Forms.Label labelScreenwriter_PAO;
         private System.Windows.Forms.Label labelDirector_PAO;
@@ -436,11 +422,11 @@ namespace Tyuiu.PostikaAO.Sprint7.Project.V9
         private System.Windows.Forms.ToolStrip toolStripMenu_PAO;
         private System.Windows.Forms.ToolStripButton toolStripButtonAdd_PAO;
         private System.Windows.Forms.ToolStripButton toolStripButtonDelete_PAO;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1_PAO;
         private System.Windows.Forms.ToolStripTextBox toolStripTextBoxSearch_PAO;
         private System.Windows.Forms.ToolStripButton toolStripButtonSearch_PAO;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
-        private System.Windows.Forms.ToolStripButton toolStripButton1;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator2_PAO;
+        private System.Windows.Forms.ToolStripButton toolStripButtonStat_PAO;
     }
 }
 
