@@ -77,7 +77,7 @@ namespace Tyuiu.PostikaAO.Sprint7.Project.V9.Lib
             return result;
         }
 
-        public string[] GetFilmInfo(int lineNum)
+        public string[] GetNecessaryFilmInfo(int lineNum)
         {
             string line = File.ReadLines(pathData).Skip(lineNum).First();
             string[] result = line.Split(';');
@@ -85,33 +85,21 @@ namespace Tyuiu.PostikaAO.Sprint7.Project.V9.Lib
             return result;
         }
 
-        public string[] GetAllFilmsNames()
+        public string[] GetNecessaryTypeInfo(int typeNum)
         {
             string[] lines = File.ReadAllLines(pathData);
             string[] result = new string[lines.Length];
 
             for (int i = 0; i < result.Length; i++)
             {
-                string filmName = lines[i].Split(';')[1];
+                string filmName = lines[i].Split(';')[typeNum];
                 result[i] = filmName;
             }
 
             return result;
         }
 
-        public string[] GetAllFilmsImages()
-        {
-            string[] lines = File.ReadAllLines(pathData);
-            string[] result = new string[lines.Length];
-
-            for (int i = 0; i < result.Length; i++)
-            {
-                string pathImage = lines[i].Split(';')[0];
-                result[i] = pathImage;
-            }
-
-            return result;
-        }
+       
 
 
         public void DeleteFilm(int deletedLine)
@@ -149,5 +137,13 @@ namespace Tyuiu.PostikaAO.Sprint7.Project.V9.Lib
             }
         }
 
+
+        public int[] GetGenreStatistics()
+        {
+            int[] result=new int[1];
+            int filmCount = 0;
+
+            return result;
+        }
     }
 }

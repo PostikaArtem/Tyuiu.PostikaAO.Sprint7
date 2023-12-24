@@ -26,7 +26,7 @@ namespace Tyuiu.PostikaAO.Sprint7.Project.V9
         DataService ds = new DataService();
         int openedFilm = -1;
         Size buttonSize = new Size(94, 141);
-        
+        string[] genres = { "Боевик", "Детектив", "Драма", "Исторический фильм", "Комедия", "Музыкальный фильм", "Триллер" }; 
         
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -60,15 +60,6 @@ namespace Tyuiu.PostikaAO.Sprint7.Project.V9
             }
 
 
-            //labelName_PAO.Text = data[0];
-            //labelYearText_PAO.Text = data[1];
-            //labelGenreText_PAO.Text = data[2];
-            //labelDirectorText_PAO.Text = data[3];
-            //labelScreenwriterText_PAO.Text = data[4];
-            //labelRoleText_PAO.Text = data[5];
-            //labelCountryText_PAO.Text = data[6];
-            //labelStudioText_PAO.Text = data[7];
-            //labelDescriptionText_PAO.Text = data[8];
         }
 
         private void labelRoleText_PAO_Click(object sender, EventArgs e)
@@ -91,8 +82,8 @@ namespace Tyuiu.PostikaAO.Sprint7.Project.V9
         {
             flowLayoutPanelLeft_PAO.Controls.Clear();
 
-            string[] allFilmsNames = ds.GetAllFilmsNames();
-            string[] allFilmsImages = ds.GetAllFilmsImages();
+            string[] allFilmsNames = ds.GetNecessaryFilmInfo(1);
+            string[] allFilmsImages = ds.GetNecessaryFilmInfo(0);
             bool[] correctFilm = new bool[allFilmsNames.Length];
 
             for (int i = 0; i < allFilmsNames.Length; i++)
@@ -159,7 +150,7 @@ namespace Tyuiu.PostikaAO.Sprint7.Project.V9
             if (lineNum == 0) return;
             for(int i = 0; i < lineNum; i++) 
             {
-                string[] temp = ds.GetFilmInfo(i);
+                string[] temp = ds.GetNecessaryFilmInfo(i);
                 Button newButton = CreateButton(temp[1],i,temp[0]);
                 flowLayoutPanelLeft_PAO.Controls.Add(newButton);
             }
@@ -193,7 +184,7 @@ namespace Tyuiu.PostikaAO.Sprint7.Project.V9
             //int num = int.Parse(b.Tag.ToString());
             openedFilm = b.TabIndex;
 
-            string[] data = ds.GetFilmInfo(openedFilm);
+            string[] data = ds.GetNecessaryFilmInfo(openedFilm);
 
             try
             {
@@ -205,14 +196,17 @@ namespace Tyuiu.PostikaAO.Sprint7.Project.V9
                 pictureBoxPreview_PAO.Image = Properties.Resources.imageLoadError;
             }
             labelName_PAO.Text = data[1];
-            labelCountryText_PAO.Text = data[2];
-            labelScreenwriterText_PAO.Text = data[3];
+            labelYearText_PAO.Text = data[2];
+            labelGenreText_PAO.Text = genres[int.Parse(data[3])];
             labelDirectorText_PAO.Text = data[4];
-            labelGenreText_PAO.Text = data[5];
-            labelRoleText_PAO.Text = data[6];
+            labelScreenwriterText_PAO.Text = data[5];
+            labelCountryText_PAO.Text = data[6];
+            labelRoleText_PAO.Text = data[8];
             labelStudioText_PAO.Text = data[7];
-            labelYearText_PAO.Text = data[8];
             labelDescriptionText_PAO.Text = data[9];
+
+
+            
         }
 
         private void pictureBoxPreview_PAO_Click(object sender, EventArgs e)
@@ -265,8 +259,33 @@ namespace Tyuiu.PostikaAO.Sprint7.Project.V9
 
         private void toolStripButton1_Click_1(object sender, EventArgs e)
         {
-            FormSearch formSearch = new FormSearch(this);
-            formSearch.ShowDialog();
+        }
+
+        private void toolStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
+
+        private void toolStripButton1_Click_2(object sender, EventArgs e)
+        {
+            string searchRequest = toolStripTextBoxSearch_PAO.Text;
+
+            if (!string.IsNullOrEmpty(searchRequest))
+            {
+                Search(searchRequest.ToLower());
+            }
+            else
+            {
+                UpdateFilmsButtons();
+                MessageBox.Show("Задан пустой поисковой запрос.", "Ошибка");
+            }
+        }
+
+        private void toolStripButton1_Click_3(object sender, EventArgs e)
+        {
+            FormStatistics formStatistics = new FormStatistics();
+
+
         }
     }
 }

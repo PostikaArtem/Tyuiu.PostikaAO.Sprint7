@@ -34,7 +34,6 @@ namespace Tyuiu.PostikaAO.Sprint7.Project.V9
             this.textBoxYear_PAO = new System.Windows.Forms.TextBox();
             this.textBoxDescription_PAO = new System.Windows.Forms.TextBox();
             this.textBoxDirector_PAO = new System.Windows.Forms.TextBox();
-            this.textBoxGenre_PAO = new System.Windows.Forms.TextBox();
             this.textBoxScreenwriter_PAO = new System.Windows.Forms.TextBox();
             this.textBoxStudio_PAO = new System.Windows.Forms.TextBox();
             this.textBoxCountry_PAO = new System.Windows.Forms.TextBox();
@@ -51,6 +50,7 @@ namespace Tyuiu.PostikaAO.Sprint7.Project.V9
             this.labelRole_PAO = new System.Windows.Forms.Label();
             this.labelDescription_PAO = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.comboBoxGenre_PAO = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPreview_PAO)).BeginInit();
             this.SuspendLayout();
             // 
@@ -88,13 +88,6 @@ namespace Tyuiu.PostikaAO.Sprint7.Project.V9
             this.textBoxDirector_PAO.Name = "textBoxDirector_PAO";
             this.textBoxDirector_PAO.Size = new System.Drawing.Size(295, 22);
             this.textBoxDirector_PAO.TabIndex = 4;
-            // 
-            // textBoxGenre_PAO
-            // 
-            this.textBoxGenre_PAO.Location = new System.Drawing.Point(499, 64);
-            this.textBoxGenre_PAO.Name = "textBoxGenre_PAO";
-            this.textBoxGenre_PAO.Size = new System.Drawing.Size(150, 22);
-            this.textBoxGenre_PAO.TabIndex = 5;
             // 
             // textBoxScreenwriter_PAO
             // 
@@ -234,11 +227,30 @@ namespace Tyuiu.PostikaAO.Sprint7.Project.V9
             this.label1.Text = "Рекомендуемое соотношение\r\nстороно изображения 2:3";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // comboBoxGenre_PAO
+            // 
+            this.comboBoxGenre_PAO.DisplayMember = "0";
+            this.comboBoxGenre_PAO.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxGenre_PAO.FormattingEnabled = true;
+            this.comboBoxGenre_PAO.Items.AddRange(new object[] {
+            "Боевик",
+            "Детектив",
+            "Драма",
+            "Исторический фильм",
+            "Комедия",
+            "Музыкальный фильм",
+            "Триллер"});
+            this.comboBoxGenre_PAO.Location = new System.Drawing.Point(499, 63);
+            this.comboBoxGenre_PAO.Name = "comboBoxGenre_PAO";
+            this.comboBoxGenre_PAO.Size = new System.Drawing.Size(150, 24);
+            this.comboBoxGenre_PAO.TabIndex = 22;
+            // 
             // FormAddFilm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(661, 391);
+            this.Controls.Add(this.comboBoxGenre_PAO);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.labelDescription_PAO);
             this.Controls.Add(this.labelRole_PAO);
@@ -252,7 +264,6 @@ namespace Tyuiu.PostikaAO.Sprint7.Project.V9
             this.Controls.Add(this.textBoxCountry_PAO);
             this.Controls.Add(this.textBoxStudio_PAO);
             this.Controls.Add(this.textBoxScreenwriter_PAO);
-            this.Controls.Add(this.textBoxGenre_PAO);
             this.Controls.Add(this.textBoxDirector_PAO);
             this.Controls.Add(this.textBoxDescription_PAO);
             this.Controls.Add(this.textBoxYear_PAO);
@@ -279,7 +290,6 @@ namespace Tyuiu.PostikaAO.Sprint7.Project.V9
         private System.Windows.Forms.TextBox textBoxYear_PAO;
         private System.Windows.Forms.TextBox textBoxDescription_PAO;
         private System.Windows.Forms.TextBox textBoxDirector_PAO;
-        private System.Windows.Forms.TextBox textBoxGenre_PAO;
         private System.Windows.Forms.TextBox textBoxScreenwriter_PAO;
         private System.Windows.Forms.TextBox textBoxStudio_PAO;
         private System.Windows.Forms.TextBox textBoxCountry_PAO;
@@ -296,5 +306,6 @@ namespace Tyuiu.PostikaAO.Sprint7.Project.V9
         private System.Windows.Forms.Label labelRole_PAO;
         private System.Windows.Forms.Label labelDescription_PAO;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox comboBoxGenre_PAO;
     }
 }
