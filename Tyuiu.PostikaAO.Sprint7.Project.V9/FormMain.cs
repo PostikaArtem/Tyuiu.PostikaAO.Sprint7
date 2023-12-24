@@ -78,24 +78,16 @@ namespace Tyuiu.PostikaAO.Sprint7.Project.V9
 
         private void textBoxSearch_PAO_Enter(object sender, EventArgs e)
         {
-            if(textBoxSearch_PAO.Text == "Поиск...")
-            {
-                textBoxSearch_PAO.Text = "";
-                textBoxSearch_PAO.ForeColor = Color.Black;
-            }
+            
         }
 
         private void textBoxSearch_PAO_Leave(object sender, EventArgs e)
         {
-            if (textBoxSearch_PAO.Text == "")
-            {
-                textBoxSearch_PAO.Text = "Поиск...";
-                textBoxSearch_PAO.ForeColor = Color.Silver;
-            }
+           
         }
 
 
-        private void Search(string request)
+        public void Search(string request)
         {
             flowLayoutPanelLeft_PAO.Controls.Clear();
 
@@ -159,7 +151,7 @@ namespace Tyuiu.PostikaAO.Sprint7.Project.V9
 
 
 
-        private void UpdateFilmsButtons()
+        public void UpdateFilmsButtons()
         {
             flowLayoutPanelLeft_PAO.Controls.Clear();
 
@@ -230,17 +222,7 @@ namespace Tyuiu.PostikaAO.Sprint7.Project.V9
 
         private void buttonSearch_PAO_Click(object sender, EventArgs e)
         {
-            string searchRequest = textBoxSearch_PAO.Text;
-
-            if (!string.IsNullOrEmpty(searchRequest))
-            {
-                Search(searchRequest.ToLower());
-            }
-            else
-            {
-                UpdateFilmsButtons();
-                MessageBox.Show("Задан пустой поисковой запрос.", "Ошибка");
-            }
+           
         }
 
         private void textBoxSearch_PAO_TextChanged(object sender, EventArgs e)
@@ -251,6 +233,40 @@ namespace Tyuiu.PostikaAO.Sprint7.Project.V9
         private void FormMain_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void toolStripButton1_Click(object sender, EventArgs e)
+        {
+
+            FormAddFilm AddForm = new FormAddFilm();
+            AddForm.ShowDialog();
+            UpdateFilmsButtons();
+        }
+
+        private void toolStripButton2_Click(object sender, EventArgs e)
+        {
+
+            if (openedFilm != -1)
+            {
+                DialogResult result = MessageBox.Show($"Вы действительно хотите удалить информацию о {labelName_PAO.Text}?", "Удаление", MessageBoxButtons.YesNo);
+                if (result == DialogResult.Yes)
+                {
+                    flowLayoutPanelLeft_PAO.Controls.Clear();
+                    ds.DeleteFilm(openedFilm);
+                    InfoReset();
+                    UpdateFilmsButtons();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Для удаления откройте страницу с фильмом.", "Ошибка");
+            }
+        }
+
+        private void toolStripButton1_Click_1(object sender, EventArgs e)
+        {
+            FormSearch formSearch = new FormSearch(this);
+            formSearch.ShowDialog();
         }
     }
 }
