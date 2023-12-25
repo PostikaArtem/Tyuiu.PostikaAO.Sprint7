@@ -299,7 +299,7 @@ namespace Tyuiu.PostikaAO.Sprint7.Project.V9
 
         private Size GetLabelSize(Label neededLabel)
         {
-            Size neededSize = new Size(this.Width - neededLabel.Location.X  , defaultLabelSize.Height);
+            Size neededSize = new Size(this.Width - neededLabel.Location.X - 35 , defaultLabelSize.Height);
 
             Size result = neededLabel.GetPreferredSize(neededSize);
             return result;
