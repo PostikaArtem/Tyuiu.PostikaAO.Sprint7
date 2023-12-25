@@ -287,6 +287,12 @@ namespace Tyuiu.PostikaAO.Sprint7.Project.V9
 
         private void toolStripButtonHelp_PAO_Click(object sender, EventArgs e)
         {
+            FormInformatoin formInformation = new FormInformatoin();
+            formInformation.ShowDialog();
+        }
+
+        private void toolStripButtonHelp_PAO_Click_1(object sender, EventArgs e)
+        {
             FormHelp formHelp = new FormHelp();
             formHelp.ShowDialog();
         }

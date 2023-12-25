@@ -10,16 +10,16 @@ using System.Windows.Forms;
 
 namespace Tyuiu.PostikaAO.Sprint7.Project.V9
 {
-    public partial class FormHelp : Form
+    public partial class FormInformatoin : Form
     {
-        public FormHelp()
+        public FormInformatoin()
         {
             InitializeComponent();
         }
 
-        private void FormHelp_Load(object sender, EventArgs e)
+        private void buttonOK_PAO_Click(object sender, EventArgs e)
         {
-
+            this.Close();
         }
     }
 }

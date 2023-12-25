@@ -117,4 +117,15 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Разработчик: Постика А.О.
+Группа ИИПб-23-1
+
+Программа разработана в рамках изучения языка C#
+
+Тюменский индустриальный университет (c) 2023
+Высшая школа цифровых технологий (c) 2023
+
+Внутреннее имя: Tyuiu.PostikaAO.Sprint7.Project.V9</value>
+  </data>
 </root>
