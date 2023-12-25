@@ -17,7 +17,10 @@ namespace Tyuiu.PostikaAO.Sprint7.Project.V9
     {
         DataService ds = new DataService();
         int openedFilm = -1;
+        int sortType = 0;
         Size defaultLabelSize;
+
+        string pathImg = $@"{Directory.GetCurrentDirectory()}\img\";
 
         public FormMain()
         {
@@ -25,14 +28,9 @@ namespace Tyuiu.PostikaAO.Sprint7.Project.V9
             UpdateFilmsButtons();
             ds.ClearUnusedImages();
 
+            toolStripComboBoxSort_PAO.SelectedIndex = sortType;
             defaultLabelSize = labelGenreText_PAO.Size;
         }
-        
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void buttonAdd_PAO_Click(object sender, EventArgs e)
         {
             FormAddFilm AddForm = new FormAddFilm();
@@ -42,42 +40,15 @@ namespace Tyuiu.PostikaAO.Sprint7.Project.V9
 
         private void buttonDelete_PAO_Click(object sender, EventArgs e)
         {
-
-            if (openedFilm != -1)
-            {
                 DialogResult result = MessageBox.Show($"Вы действительно хотите удалить информацию о {labelName_PAO.Text}?", "Удаление", MessageBoxButtons.YesNo);
-                if (result == DialogResult.Yes)
-                {
-                    flowLayoutPanelLeft_PAO.Controls.Clear();
-                    ds.DeleteFilm(openedFilm);
-                    InfoReset();
-                    UpdateFilmsButtons();
-                }
-            }
-            else
+            if (result == DialogResult.Yes)
             {
-                MessageBox.Show("Для удаления откройте страницу с фильмом.", "Ошибка");
-            }
-
-
+                flowLayoutPanelLeft_PAO.Controls.Clear();
+                ds.DeleteFilm(openedFilm);
+                InfoReset();
+                UpdateFilmsButtons();
+            }                     
         }
-
-        private void labelRoleText_PAO_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBoxSearch_PAO_Enter(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void textBoxSearch_PAO_Leave(object sender, EventArgs e)
-        {
-           
-        }
-
-
         public void Search(string request)
         {
             flowLayoutPanelLeft_PAO.Controls.Clear();
@@ -91,7 +62,7 @@ namespace Tyuiu.PostikaAO.Sprint7.Project.V9
 
                 if (lowerFilmName.Contains(request.ToLower()))
                 {
-                    Button newButton = CreateButton(allFilmsNames[i],i,allFilmsImages[i]);
+                    Button newButton = CreateButton(allFilmsNames[i], i, allFilmsImages[i], i);
                     flowLayoutPanelLeft_PAO.Controls.Add(newButton);
                 }
             }
@@ -102,9 +73,7 @@ namespace Tyuiu.PostikaAO.Sprint7.Project.V9
                 MessageBox.Show("Запрос не найден.", "Ошибка");
             }
         }
-
-
-        private Button CreateButton(string filmName, int lineNum, string pathImage)
+        private Button CreateButton(string filmName, int lineNum, string pathImage, int tabIndex)
         {
             Size buttonSize = new Size(94, 141);
             Button openButton = new Button();
@@ -115,17 +84,17 @@ namespace Tyuiu.PostikaAO.Sprint7.Project.V9
             openButton.Name = $"buttonFilm{lineNum}_PAO";
             try
             {
-                openButton.BackgroundImage = Image.FromFile(pathImage);
+                openButton.BackgroundImage = Image.FromFile(pathImg + pathImage);
             }
             catch
             {
                 openButton.BackgroundImage = Properties.Resources.imageLoadError;
             }
             openButton.BackgroundImageLayout = ImageLayout.Stretch;
+            openButton.TabIndex = tabIndex;
             openButton.Click += new EventHandler(this.OpenFilm);
             return openButton;
-        } 
-
+        }
         private void InfoReset()
         {
             pictureBoxPreview_PAO.Image = Properties.Resources.imagePlaceholder;
@@ -141,23 +110,87 @@ namespace Tyuiu.PostikaAO.Sprint7.Project.V9
 
             toolStripButtonDelete_PAO.Enabled = false;
         }
-
-
-
         public void UpdateFilmsButtons()
         {
             flowLayoutPanelLeft_PAO.Controls.Clear();
+            int filmsCount = ds.GetFilmCount();
+            if (filmsCount == 0) return;
 
-            int lineNum =ds.GetFilmCount();
-            if (lineNum == 0) return;
-            for(int i = 0; i < lineNum; i++) 
+            string[] temp;
+            int[] sortedLinesNums = new int[filmsCount];
+
+            switch (sortType)
             {
-                string[] temp = ds.GetNecessaryFilmInfo(i);
-                Button newButton = CreateButton(temp[1],i,temp[0]);
-                flowLayoutPanelLeft_PAO.Controls.Add(newButton);
-            }
+                case 0:
+                    for (int i = 0; i < filmsCount; i++)
+                    {
+                        temp = ds.GetNecessaryFilmInfo(i);
+                        Button newButton = CreateButton(temp[1], i, temp[0], i);
+                        flowLayoutPanelLeft_PAO.Controls.Add(newButton);
+                    }
+                    break;
 
+                case 1:
+                    string[] names = ds.GetNecessaryTypeInfo(1);
+                    string[] sortedNames = ds.GetNecessaryTypeInfo(1);
+                    Array.Sort(sortedNames);
+
+                    for (int i = 0; i < filmsCount; i++)
+                    {
+                        for (int j = 0; j < filmsCount; j++)
+                        {
+                            if (sortedNames[i] == names[j])
+                            {
+                                sortedLinesNums[i] = j;
+                                break;
+                            }
+                        }
+                    }
+
+                    foreach (int item in sortedLinesNums)
+                    {
+                        temp = ds.GetNecessaryFilmInfo(item);
+                        Button newButton = CreateButton(temp[1], item, temp[0], item);
+                        flowLayoutPanelLeft_PAO.Controls.Add(newButton);
+                    }
+                    break;
+
+                case 2:
+                    string[] years = ds.GetNecessaryTypeInfo(2);
+                    for (int i = 0; i < sortedLinesNums.Length; i++)
+                    {
+                        sortedLinesNums[i] = i;
+                    }
+
+                    string tempYearString;
+                    int tempYearInt;
+                    for (int i = 0; i < years.Length - 1; i++)
+                    {
+                        for (int j = i + 1; j < years.Length; j++)
+                        {
+                            if (int.Parse(years[i]) > int.Parse(years[j]))
+                            {
+                                tempYearString = years[i];
+                                years[i] = years[j];
+                                years[j] = tempYearString;
+
+                                tempYearInt = sortedLinesNums[i];
+                                sortedLinesNums[i] = sortedLinesNums[j];
+                                sortedLinesNums[j] = tempYearInt;
+                            }
+                        }
+                    }
+
+                    foreach (int item in sortedLinesNums)
+                    {
+                        temp = ds.GetNecessaryFilmInfo(item);
+                        Button newButton = CreateButton(temp[1], item, temp[0], item);
+                        flowLayoutPanelLeft_PAO.Controls.Add(newButton);
+                    }
+                    break;
+            }
         }
+
 
         private void OpenFilm(Object sender, EventArgs e)
         {
@@ -170,8 +203,7 @@ namespace Tyuiu.PostikaAO.Sprint7.Project.V9
 
             try
             {
-                pictureBoxPreview_PAO.Image = Image.FromFile(data[0]);
-
+                pictureBoxPreview_PAO.Image = Image.FromFile(pathImg + data[0]);
             }
             catch
             {
@@ -188,41 +220,19 @@ namespace Tyuiu.PostikaAO.Sprint7.Project.V9
             labelDescriptionText_PAO.Text = data[9];
 
             MoveLabels();
-            
         }
 
-        private void pictureBoxPreview_PAO_Click(object sender, EventArgs e)
+
+        private void toolStripButtonAdd_PAO_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void buttonSearch_PAO_Click(object sender, EventArgs e)
-        {
-           
-        }
-
-        private void textBoxSearch_PAO_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void FormMain_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void toolStripButton1_Click(object sender, EventArgs e)
-        {
-
             FormAddFilm AddForm = new FormAddFilm();
             AddForm.ShowDialog();
             UpdateFilmsButtons();
         }
 
-        private void toolStripButton2_Click(object sender, EventArgs e)
+
+        private void toolStripButtonDelete_PAO_Click(object sender, EventArgs e)
         {
-
-
             DialogResult result = MessageBox.Show($"Вы действительно хотите удалить информацию о {labelName_PAO.Text}?", "Удаление", MessageBoxButtons.YesNo);
             if (result == DialogResult.Yes)
             {
@@ -234,16 +244,8 @@ namespace Tyuiu.PostikaAO.Sprint7.Project.V9
 
         }
 
-        private void toolStripButton1_Click_1(object sender, EventArgs e)
-        {
-        }
 
-        private void toolStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
-        {
-
-        }
-
-        private void toolStripButton1_Click_2(object sender, EventArgs e)
+        private void toolStripButtonSearch_PAO_Click_2(object sender, EventArgs e)
         {
             string searchRequest = toolStripTextBoxSearch_PAO.Text;
 
@@ -258,17 +260,15 @@ namespace Tyuiu.PostikaAO.Sprint7.Project.V9
             }
         }
 
-        private void toolStripButton1_Click_3(object sender, EventArgs e)
+        private void toolStripButtonStat_PAO_Click_3(object sender, EventArgs e)
         {
             FormStatistics formStatistics = new FormStatistics();
             formStatistics.ShowDialog();
-
-
         }
 
         private void toolStripTextBoxSearch_PAO_Enter(object sender, EventArgs e)
         {
-            if(toolStripTextBoxSearch_PAO.Text == "Поиск...")
+            if (toolStripTextBoxSearch_PAO.Text == "Поиск...")
             {
                 toolStripTextBoxSearch_PAO.Text = "";
                 toolStripTextBoxSearch_PAO.ForeColor = Color.Black;
@@ -299,7 +299,7 @@ namespace Tyuiu.PostikaAO.Sprint7.Project.V9
 
         private Size GetLabelSize(Label neededLabel)
         {
-            Size neededSize = new Size(this.Width - neededLabel.Location.X - 35 , defaultLabelSize.Height);
+            Size neededSize = new Size(neededLabel.Width, defaultLabelSize.Height);
 
             Size result = neededLabel.GetPreferredSize(neededSize);
             return result;
@@ -312,7 +312,9 @@ namespace Tyuiu.PostikaAO.Sprint7.Project.V9
 
             for (int i = 0; i < parametrs.Length; i++)
             {
-                parametrs[i].Size = GetLabelSize(parametrs[i]);
+                Size parametrSize = new Size(parametrs[i].Width, GetLabelSize(parametrs[i]).Height);
+
+                parametrs[i].Size = parametrSize;
 
                 if (i != parametrs.Length - 1)
                 {
@@ -321,11 +323,24 @@ namespace Tyuiu.PostikaAO.Sprint7.Project.V9
                     titles[i + 1].Location = new Point(titles[i].Location.X, AxisY);
                 }
             }
+
+
         }
 
         private void FormMain_Resize(object sender, EventArgs e)
         {
             MoveLabels();
+        }
+
+        private void toolStripComboBoxSort_PAO_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            sortType = toolStripComboBoxSort_PAO.SelectedIndex;
+            UpdateFilmsButtons();
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

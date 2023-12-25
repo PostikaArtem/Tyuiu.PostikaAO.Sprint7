@@ -9,13 +9,13 @@ using System.IO;
 namespace Tyuiu.PostikaAO.Sprint7.Project.V9.Lib
 {
     public class DataService
-    { 
+    {
         string pathImg = $@"{Directory.GetCurrentDirectory()}\img\";
         string pathData = $@"{Directory.GetCurrentDirectory()}\FilmsData.csv";
         public void AddFilm(string[] values)
         {
             bool isFirst = false;
-            if(!File.Exists(pathData))
+            if (!File.Exists(pathData))
             {
                 Directory.CreateDirectory(pathImg);
                 isFirst = true;
@@ -25,24 +25,26 @@ namespace Tyuiu.PostikaAO.Sprint7.Project.V9.Lib
 
             temp = fileName.Split('.');
 
-            string fileFormat = '.' + temp[1];
+            string fileFormat = '.' + temp[temp.Length - 1];
             fileName = temp[0];
 
             string copyTo = pathImg + fileName + fileFormat;
             string copyFrom = values[0];
 
             int additionNum = 0;
+            string endFileName = fileName + fileFormat;
             while (File.Exists(copyTo))
             {
                 additionNum++;
-                copyTo = pathImg + fileName + additionNum + fileFormat;
+                endFileName = fileName + additionNum + fileFormat;
+                copyTo = pathImg + endFileName;
             }
             File.Copy(copyFrom, copyTo);
-            values[0] = copyTo;
+            values[0] = endFileName;
 
 
             string finalLine = string.Join(";", values);
-            
+
             if (isFirst)
             {
                 File.AppendAllText(pathData, finalLine, Encoding.Unicode);
@@ -91,9 +93,6 @@ namespace Tyuiu.PostikaAO.Sprint7.Project.V9.Lib
 
             return result;
         }
-
-       
-
 
         public void DeleteFilm(int deletedLine)
         {
