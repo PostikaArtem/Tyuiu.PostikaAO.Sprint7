@@ -35,7 +35,7 @@ namespace Tyuiu.PostikaAO.Sprint7.Project.V9
             this.textBoxDescription_PAO = new System.Windows.Forms.TextBox();
             this.textBoxDirector_PAO = new System.Windows.Forms.TextBox();
             this.textBoxScreenwriter_PAO = new System.Windows.Forms.TextBox();
-            this.textBoxStudio_PAO = new System.Windows.Forms.TextBox();
+            this.textBoxRating_PAO = new System.Windows.Forms.TextBox();
             this.textBoxCountry_PAO = new System.Windows.Forms.TextBox();
             this.buttonAdd_PAO = new System.Windows.Forms.Button();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
@@ -45,7 +45,7 @@ namespace Tyuiu.PostikaAO.Sprint7.Project.V9
             this.labelDirector_PAO = new System.Windows.Forms.Label();
             this.labelScreenwriter_PAO = new System.Windows.Forms.Label();
             this.labelCountry_PAO = new System.Windows.Forms.Label();
-            this.labelStudio_PAO = new System.Windows.Forms.Label();
+            this.labelRating_PAO = new System.Windows.Forms.Label();
             this.labelRole_PAO = new System.Windows.Forms.Label();
             this.labelDescription_PAO = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -96,12 +96,12 @@ namespace Tyuiu.PostikaAO.Sprint7.Project.V9
             this.textBoxScreenwriter_PAO.Size = new System.Drawing.Size(295, 22);
             this.textBoxScreenwriter_PAO.TabIndex = 6;
             // 
-            // textBoxStudio_PAO
+            // textBoxRating_PAO
             // 
-            this.textBoxStudio_PAO.Location = new System.Drawing.Point(549, 199);
-            this.textBoxStudio_PAO.Name = "textBoxStudio_PAO";
-            this.textBoxStudio_PAO.Size = new System.Drawing.Size(100, 22);
-            this.textBoxStudio_PAO.TabIndex = 7;
+            this.textBoxRating_PAO.Location = new System.Drawing.Point(549, 199);
+            this.textBoxRating_PAO.Name = "textBoxRating_PAO";
+            this.textBoxRating_PAO.Size = new System.Drawing.Size(100, 22);
+            this.textBoxRating_PAO.TabIndex = 7;
             // 
             // textBoxCountry_PAO
             // 
@@ -179,14 +179,14 @@ namespace Tyuiu.PostikaAO.Sprint7.Project.V9
             this.labelCountry_PAO.Text = "Страна:";
             this.labelCountry_PAO.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // labelStudio_PAO
+            // labelRating_PAO
             // 
-            this.labelStudio_PAO.Location = new System.Drawing.Point(441, 200);
-            this.labelStudio_PAO.Name = "labelStudio_PAO";
-            this.labelStudio_PAO.Size = new System.Drawing.Size(100, 23);
-            this.labelStudio_PAO.TabIndex = 18;
-            this.labelStudio_PAO.Text = "Студия:";
-            this.labelStudio_PAO.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.labelRating_PAO.Location = new System.Drawing.Point(441, 200);
+            this.labelRating_PAO.Name = "labelRating_PAO";
+            this.labelRating_PAO.Size = new System.Drawing.Size(100, 23);
+            this.labelRating_PAO.TabIndex = 18;
+            this.labelRating_PAO.Text = "Оценка:";
+            this.labelRating_PAO.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // labelRole_PAO
             // 
@@ -265,7 +265,7 @@ namespace Tyuiu.PostikaAO.Sprint7.Project.V9
             this.Controls.Add(this.pictureBoxPreview_PAO);
             this.Controls.Add(this.buttonAdd_PAO);
             this.Controls.Add(this.textBoxCountry_PAO);
-            this.Controls.Add(this.textBoxStudio_PAO);
+            this.Controls.Add(this.textBoxRating_PAO);
             this.Controls.Add(this.textBoxScreenwriter_PAO);
             this.Controls.Add(this.textBoxDirector_PAO);
             this.Controls.Add(this.textBoxDescription_PAO);
@@ -273,7 +273,7 @@ namespace Tyuiu.PostikaAO.Sprint7.Project.V9
             this.Controls.Add(this.textBoxRole_PAO);
             this.Controls.Add(this.textBoxName_PAO);
             this.Controls.Add(this.labelGenre_PAO);
-            this.Controls.Add(this.labelStudio_PAO);
+            this.Controls.Add(this.labelRating_PAO);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -294,7 +294,7 @@ namespace Tyuiu.PostikaAO.Sprint7.Project.V9
         private System.Windows.Forms.TextBox textBoxDescription_PAO;
         private System.Windows.Forms.TextBox textBoxDirector_PAO;
         private System.Windows.Forms.TextBox textBoxScreenwriter_PAO;
-        private System.Windows.Forms.TextBox textBoxStudio_PAO;
+        private System.Windows.Forms.TextBox textBoxRating_PAO;
         private System.Windows.Forms.TextBox textBoxCountry_PAO;
         private System.Windows.Forms.Button buttonAdd_PAO;
         private System.Windows.Forms.PictureBox pictureBoxPreview_PAO;
@@ -305,7 +305,7 @@ namespace Tyuiu.PostikaAO.Sprint7.Project.V9
         private System.Windows.Forms.Label labelDirector_PAO;
         private System.Windows.Forms.Label labelScreenwriter_PAO;
         private System.Windows.Forms.Label labelCountry_PAO;
-        private System.Windows.Forms.Label labelStudio_PAO;
+        private System.Windows.Forms.Label labelRating_PAO;
         private System.Windows.Forms.Label labelRole_PAO;
         private System.Windows.Forms.Label labelDescription_PAO;
         private System.Windows.Forms.Label label1;

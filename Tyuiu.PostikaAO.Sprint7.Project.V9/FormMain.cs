@@ -133,7 +133,7 @@ namespace Tyuiu.PostikaAO.Sprint7.Project.V9
             labelDirectorText_PAO.Text = "-";
             labelGenreText_PAO.Text = "-";
             labelRoleText_PAO.Text = "-";
-            labelStudioText_PAO.Text = "-";
+            labelRatingText_PAO.Text = "-";
             labelYearText_PAO.Text = "-";
             labelDescriptionText_PAO.Text = "-";
 
@@ -182,10 +182,10 @@ namespace Tyuiu.PostikaAO.Sprint7.Project.V9
             labelScreenwriterText_PAO.Text = data[5];
             labelCountryText_PAO.Text = data[6];
             labelRoleText_PAO.Text = data[8];
-            labelStudioText_PAO.Text = data[7];
+            labelRatingText_PAO.Text = data[7];
             labelDescriptionText_PAO.Text = data[9];
 
-
+            MoveLabels();
             
         }
 
@@ -220,21 +220,16 @@ namespace Tyuiu.PostikaAO.Sprint7.Project.V9
         private void toolStripButton2_Click(object sender, EventArgs e)
         {
 
-            if (openedFilm != -1)
+
+            DialogResult result = MessageBox.Show($"Вы действительно хотите удалить информацию о {labelName_PAO.Text}?", "Удаление", MessageBoxButtons.YesNo);
+            if (result == DialogResult.Yes)
             {
-                DialogResult result = MessageBox.Show($"Вы действительно хотите удалить информацию о {labelName_PAO.Text}?", "Удаление", MessageBoxButtons.YesNo);
-                if (result == DialogResult.Yes)
-                {
-                    flowLayoutPanelLeft_PAO.Controls.Clear();
-                    ds.DeleteFilm(openedFilm);
-                    InfoReset();
-                    UpdateFilmsButtons();
-                }
+                flowLayoutPanelLeft_PAO.Controls.Clear();
+                ds.DeleteFilm(openedFilm);
+                InfoReset();
+                UpdateFilmsButtons();
             }
-            else
-            {
-                MessageBox.Show("Для удаления откройте страницу с фильмом.", "Ошибка");
-            }
+
         }
 
         private void toolStripButton1_Click_1(object sender, EventArgs e)
@@ -297,6 +292,38 @@ namespace Tyuiu.PostikaAO.Sprint7.Project.V9
         {
             FormHelp formHelp = new FormHelp();
             formHelp.ShowDialog();
+        }
+
+
+        private Size GetLabelSize(Label neededLabel)
+        {
+            Size neededSize = new Size(this.Width - neededLabel.Location.X - 15 , 29);
+
+            Size result = neededLabel.GetPreferredSize(neededSize);
+            return result;
+        }
+
+        private void MoveLabels()
+        {
+            Label[] titles = { labelDirector_PAO, labelScreenwriter_PAO, labelRole_PAO, labelCountry_PAO, labelRating_PAO, labelDescription_PAO };
+            Label[] parametrs = { labelDirectorText_PAO, labelScreenwriterText_PAO, labelRoleText_PAO, labelCountryText_PAO, labelRatingText_PAO, labelDescriptionText_PAO };
+
+            for (int i = 0; i < parametrs.Length; i++)
+            {
+                parametrs[i].Size = GetLabelSize(parametrs[i]);
+
+                if (i != parametrs.Length - 1)
+                {
+                    int AxisY = parametrs[i].Location.Y + parametrs[i].Size.Height;
+                    parametrs[i + 1].Location = new Point(parametrs[i].Location.X, AxisY);
+                    titles[i + 1].Location = new Point(titles[i].Location.X, AxisY);
+                }
+            }
+        }
+
+        private void FormMain_Resize(object sender, EventArgs e)
+        {
+            MoveLabels();
         }
     }
 }

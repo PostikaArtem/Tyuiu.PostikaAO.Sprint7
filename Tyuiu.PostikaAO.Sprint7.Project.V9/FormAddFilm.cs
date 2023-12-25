@@ -22,7 +22,7 @@ namespace Tyuiu.PostikaAO.Sprint7.Project.V9
         {
             string[] values = new string[10];
 
-            if(pathImage != "" && comboBoxGenre_PAO.SelectedIndex>-1 && !string.IsNullOrEmpty(textBoxName_PAO.Text)&& !string.IsNullOrEmpty(textBoxName_PAO.Text) && !string.IsNullOrEmpty(textBoxScreenwriter_PAO.Text)&& !string.IsNullOrEmpty(textBoxDirector_PAO.Text) && !string.IsNullOrEmpty(textBoxRole_PAO.Text) && !string.IsNullOrEmpty(textBoxStudio_PAO.Text) && !string.IsNullOrEmpty(textBoxYear_PAO.Text) && !string.IsNullOrEmpty(textBoxDescription_PAO.Text))
+            if(pathImage != "" && comboBoxGenre_PAO.SelectedIndex>-1 && !string.IsNullOrEmpty(textBoxName_PAO.Text)&& !string.IsNullOrEmpty(textBoxName_PAO.Text) && !string.IsNullOrEmpty(textBoxScreenwriter_PAO.Text)&& !string.IsNullOrEmpty(textBoxDirector_PAO.Text) && !string.IsNullOrEmpty(textBoxRole_PAO.Text) && !string.IsNullOrEmpty(textBoxRating_PAO.Text) && !string.IsNullOrEmpty(textBoxYear_PAO.Text) && !string.IsNullOrEmpty(textBoxDescription_PAO.Text))
             {
                 values[0] = pathImage;
                 values[1] = textBoxName_PAO.Text;
@@ -31,7 +31,7 @@ namespace Tyuiu.PostikaAO.Sprint7.Project.V9
                 values[4] = textBoxDirector_PAO.Text;
                 values[5] = textBoxScreenwriter_PAO.Text;
                 values[6] = textBoxCountry_PAO.Text;
-                values[7] = textBoxStudio_PAO.Text;
+                values[7] = textBoxRating_PAO.Text;
                 values[8] = textBoxRole_PAO.Text;
                 values[9] = textBoxDescription_PAO.Text;
 
