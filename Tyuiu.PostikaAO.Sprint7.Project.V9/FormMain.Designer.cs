@@ -29,6 +29,7 @@ namespace Tyuiu.PostikaAO.Sprint7.Project.V9
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
             this.toolStripMenu_PAO = new System.Windows.Forms.ToolStrip();
             this.toolStripButtonAdd_PAO = new System.Windows.Forms.ToolStripButton();
             this.toolStripButtonDelete_PAO = new System.Windows.Forms.ToolStripButton();
@@ -452,6 +453,7 @@ namespace Tyuiu.PostikaAO.Sprint7.Project.V9
             this.Controls.Add(this.toolStripMenu_PAO);
             this.Controls.Add(this.flowLayoutPanelLeft_PAO);
             this.Cursor = System.Windows.Forms.Cursors.Default;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
             this.MinimumSize = new System.Drawing.Size(1000, 500);
             this.Name = "FormMain";

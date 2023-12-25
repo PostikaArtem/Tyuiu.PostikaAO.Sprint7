@@ -119,15 +119,6 @@ namespace Tyuiu.PostikaAO.Sprint7.Project.V9.Lib
             File.Delete(pathData);
             if (resultLines.Length == 0) return;
             File.AppendAllText(pathData, string.Join(Environment.NewLine, resultLines),Encoding.Unicode);
-
-            //if (resultLines.Length == 1)
-            //{
-            //    File.AppendAllText(pathData, resultLines[0]);
-            //}
-            //else
-            //{
-            //    File.AppendAllText(pathData, string.Join(Environment.NewLine, resultLines));
-            //}
         }
 
 
