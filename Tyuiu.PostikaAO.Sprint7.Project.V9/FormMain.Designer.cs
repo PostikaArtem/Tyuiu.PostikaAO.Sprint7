@@ -112,7 +112,7 @@ namespace Tyuiu.PostikaAO.Sprint7.Project.V9
             this.flowLayoutPanelLeft_PAO.BackColor = System.Drawing.SystemColors.ControlLight;
             this.flowLayoutPanelLeft_PAO.Location = new System.Drawing.Point(0, 30);
             this.flowLayoutPanelLeft_PAO.Name = "flowLayoutPanelLeft_PAO";
-            this.flowLayoutPanelLeft_PAO.Size = new System.Drawing.Size(296, 653);
+            this.flowLayoutPanelLeft_PAO.Size = new System.Drawing.Size(296, 658);
             this.flowLayoutPanelLeft_PAO.TabIndex = 1;
             // 
             // labelScreenwriter_PAO
@@ -344,10 +344,11 @@ namespace Tyuiu.PostikaAO.Sprint7.Project.V9
             // toolStripButtonDelete_PAO
             // 
             this.toolStripButtonDelete_PAO.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButtonDelete_PAO.Enabled = false;
             this.toolStripButtonDelete_PAO.Image = global::Tyuiu.PostikaAO.Sprint7.Project.V9.Properties.Resources.sign_error_icon_34362;
             this.toolStripButtonDelete_PAO.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButtonDelete_PAO.Name = "toolStripButtonDelete_PAO";
-            this.toolStripButtonDelete_PAO.Size = new System.Drawing.Size(29, 28);
+            this.toolStripButtonDelete_PAO.Size = new System.Drawing.Size(29, 24);
             this.toolStripButtonDelete_PAO.Text = "Удалить фильм";
             this.toolStripButtonDelete_PAO.Click += new System.EventHandler(this.toolStripButton2_Click);
             // 
@@ -413,6 +414,7 @@ namespace Tyuiu.PostikaAO.Sprint7.Project.V9
             this.Controls.Add(this.toolStripMenu_PAO);
             this.Controls.Add(this.groupBoxInformation_PAO);
             this.Controls.Add(this.flowLayoutPanelLeft_PAO);
+            this.Cursor = System.Windows.Forms.Cursors.Default;
             this.MinimumSize = new System.Drawing.Size(1367, 735);
             this.Name = "FormMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

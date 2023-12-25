@@ -112,6 +112,7 @@ namespace Tyuiu.PostikaAO.Sprint7.Project.V9
             // 
             // buttonAdd_PAO
             // 
+            this.buttonAdd_PAO.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonAdd_PAO.Location = new System.Drawing.Point(12, 339);
             this.buttonAdd_PAO.Name = "buttonAdd_PAO";
             this.buttonAdd_PAO.Size = new System.Drawing.Size(637, 40);
@@ -237,6 +238,7 @@ namespace Tyuiu.PostikaAO.Sprint7.Project.V9
             // pictureBoxPreview_PAO
             // 
             this.pictureBoxPreview_PAO.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.pictureBoxPreview_PAO.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBoxPreview_PAO.Image = global::Tyuiu.PostikaAO.Sprint7.Project.V9.Properties.Resources.imageLoadPlaceholder;
             this.pictureBoxPreview_PAO.Location = new System.Drawing.Point(29, 19);
             this.pictureBoxPreview_PAO.Name = "pictureBoxPreview_PAO";

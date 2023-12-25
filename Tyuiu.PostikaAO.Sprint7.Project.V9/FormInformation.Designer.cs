@@ -31,8 +31,8 @@ namespace Tyuiu.PostikaAO.Sprint7.Project.V9
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormInformatoin));
             this.label1 = new System.Windows.Forms.Label();
-            this.pictureBoxAvatar_PAO = new System.Windows.Forms.PictureBox();
             this.buttonOK_PAO = new System.Windows.Forms.Button();
+            this.pictureBoxAvatar_PAO = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxAvatar_PAO)).BeginInit();
             this.SuspendLayout();
             // 
@@ -45,6 +45,17 @@ namespace Tyuiu.PostikaAO.Sprint7.Project.V9
             this.label1.TabIndex = 0;
             this.label1.Text = resources.GetString("label1.Text");
             // 
+            // buttonOK_PAO
+            // 
+            this.buttonOK_PAO.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonOK_PAO.Location = new System.Drawing.Point(474, 206);
+            this.buttonOK_PAO.Name = "buttonOK_PAO";
+            this.buttonOK_PAO.Size = new System.Drawing.Size(91, 31);
+            this.buttonOK_PAO.TabIndex = 2;
+            this.buttonOK_PAO.Text = "OK";
+            this.buttonOK_PAO.UseVisualStyleBackColor = true;
+            this.buttonOK_PAO.Click += new System.EventHandler(this.buttonOK_PAO_Click);
+            // 
             // pictureBoxAvatar_PAO
             // 
             this.pictureBoxAvatar_PAO.Image = global::Tyuiu.PostikaAO.Sprint7.Project.V9.Properties.Resources.pngwing_com;
@@ -55,21 +66,11 @@ namespace Tyuiu.PostikaAO.Sprint7.Project.V9
             this.pictureBoxAvatar_PAO.TabIndex = 1;
             this.pictureBoxAvatar_PAO.TabStop = false;
             // 
-            // buttonOK_PAO
-            // 
-            this.buttonOK_PAO.Location = new System.Drawing.Point(474, 206);
-            this.buttonOK_PAO.Name = "buttonOK_PAO";
-            this.buttonOK_PAO.Size = new System.Drawing.Size(91, 31);
-            this.buttonOK_PAO.TabIndex = 2;
-            this.buttonOK_PAO.Text = "OK";
-            this.buttonOK_PAO.UseVisualStyleBackColor = true;
-            this.buttonOK_PAO.Click += new System.EventHandler(this.buttonOK_PAO_Click);
-            // 
             // FormInformatoin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(577, 249);
+            this.ClientSize = new System.Drawing.Size(584, 249);
             this.Controls.Add(this.buttonOK_PAO);
             this.Controls.Add(this.pictureBoxAvatar_PAO);
             this.Controls.Add(this.label1);

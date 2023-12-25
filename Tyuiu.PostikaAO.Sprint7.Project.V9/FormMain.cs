@@ -136,6 +136,8 @@ namespace Tyuiu.PostikaAO.Sprint7.Project.V9
             labelStudioText_PAO.Text = "-";
             labelYearText_PAO.Text = "-";
             labelDescriptionText_PAO.Text = "-";
+
+            toolStripButtonDelete_PAO.Enabled = false;
         }
 
 
@@ -159,7 +161,7 @@ namespace Tyuiu.PostikaAO.Sprint7.Project.V9
         {
             string[] genres = { "Боевик", "Детектив", "Драма", "Исторический фильм", "Комедия", "Музыкальный фильм", "Триллер" };
             Button b = (Button)sender;
-           
+            toolStripButtonDelete_PAO.Enabled = true;
             openedFilm = b.TabIndex;
 
             string[] data = ds.GetNecessaryFilmInfo(openedFilm);
