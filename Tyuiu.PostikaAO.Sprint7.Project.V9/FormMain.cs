@@ -17,13 +17,15 @@ namespace Tyuiu.PostikaAO.Sprint7.Project.V9
     {
         DataService ds = new DataService();
         int openedFilm = -1;
-
+        Size defaultLabelSize;
 
         public FormMain()
         {
             InitializeComponent();
             UpdateFilmsButtons();
             ds.ClearUnusedImages();
+
+            defaultLabelSize = labelGenreText_PAO.Size;
         }
         
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -297,7 +299,7 @@ namespace Tyuiu.PostikaAO.Sprint7.Project.V9
 
         private Size GetLabelSize(Label neededLabel)
         {
-            Size neededSize = new Size(this.Width - neededLabel.Location.X - 15 , 29);
+            Size neededSize = new Size(this.Width - neededLabel.Location.X  , defaultLabelSize.Height);
 
             Size result = neededLabel.GetPreferredSize(neededSize);
             return result;
